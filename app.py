@@ -147,6 +147,32 @@ def code_to_ticker(code: str, market: str = "CN") -> str:
     return code
 
 
+def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dict[str, str]:
+    """Build exchange-aware Eastmoney and TradingView stock-detail links."""
+    market = str(market).strip().upper()
+    code = str(code).strip()
+    ticker = str(ticker).strip().upper()
+
+    if market == "HK":
+        hk_code = str(int(code)).zfill(5)
+        tradingview_code = str(int(hk_code))
+        return {
+            "eastmoney_url": f"https://quote.eastmoney.com/hk/{hk_code}.html",
+            "tradingview_url": f"https://www.tradingview.com/symbols/HKEX-{tradingview_code}/",
+        }
+
+    cn_code = code.zfill(6)
+    is_shanghai = ticker.endswith(".SS") or (
+        not ticker.endswith(".SZ") and cn_code.startswith(("5", "6", "9"))
+    )
+    eastmoney_exchange = "sh" if is_shanghai else "sz"
+    tradingview_exchange = "SSE" if is_shanghai else "SZSE"
+    return {
+        "eastmoney_url": f"https://quote.eastmoney.com/{eastmoney_exchange}{cn_code}.html",
+        "tradingview_url": f"https://www.tradingview.com/symbols/{tradingview_exchange}-{cn_code}/",
+    }
+
+
 def _parse_gviz(text: str) -> dict:
     prefix = "google.visualization.Query.setResponse("
     start = text.find(prefix)
@@ -235,7 +261,16 @@ def load_stocks() -> tuple[list[dict], str]:
     except Exception:
         rows, source_mode = _load_bundled_stocks(), "bundled_snapshot"
     database_rows = _sync_stocks_to_database(rows)
-    return (database_rows or rows), source_mode
+    stocks = database_rows or rows
+    return [
+        {
+            **stock,
+            **stock_research_links(
+                stock["code"], stock.get("market", "CN"), stock.get("ticker", "")
+            ),
+        }
+        for stock in stocks
+    ], source_mode
 
 
 def calculate_rsi(close: pd.Series, period: int = 14) -> pd.Series:
