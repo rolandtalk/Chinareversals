@@ -148,7 +148,7 @@ def code_to_ticker(code: str, market: str = "CN") -> str:
 
 
 def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dict[str, str]:
-    """Build exchange-aware Eastmoney and TradingView stock-detail links."""
+    """Build an exchange-aware TradingView stock-detail link."""
     market = str(market).strip().upper()
     code = str(code).strip()
     ticker = str(ticker).strip().upper()
@@ -157,7 +157,6 @@ def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dic
         hk_code = str(int(code)).zfill(5)
         tradingview_code = str(int(hk_code))
         return {
-            "eastmoney_url": f"https://wap.eastmoney.com/quote/stock/116.{hk_code}.html",
             "tradingview_url": f"https://www.tradingview.com/symbols/HKEX-{tradingview_code}/?timeframe=1M",
         }
 
@@ -165,10 +164,8 @@ def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dic
     is_shanghai = ticker.endswith(".SS") or (
         not ticker.endswith(".SZ") and cn_code.startswith(("5", "6", "9"))
     )
-    eastmoney_market = "1" if is_shanghai else "0"
     tradingview_exchange = "SSE" if is_shanghai else "SZSE"
     return {
-        "eastmoney_url": f"https://wap.eastmoney.com/quote/stock/{eastmoney_market}.{cn_code}.html",
         "tradingview_url": f"https://www.tradingview.com/symbols/{tradingview_exchange}-{cn_code}/?timeframe=1M",
     }
 

@@ -138,14 +138,13 @@
     .close { width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 12px; background: #102449; cursor: pointer; font-size: 1.2rem; }
     .chart-box { height: 440px; margin-top: 28px; padding: 18px; border: 1px solid var(--line); border-radius: 20px; background: rgba(6,17,35,.7); }
     .drawer-message { margin-top: 30px; color: var(--muted); }
-    .drawer-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .drawer-actions { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 18px; }
     .research-link {
       min-height: 52px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 9px;
       border: 1px solid rgba(96,165,250,.3); border-radius: 14px; color: #fff;
       background: linear-gradient(135deg, #1d4ed8, #2563eb); text-decoration: none; font-size: .9rem; font-weight: 800;
       box-shadow: 0 10px 24px rgba(37,99,235,.18); transition: transform .18s ease, filter .18s ease;
     }
-    .research-link.eastmoney { background: linear-gradient(135deg, #075985, #0369a1); }
     .research-link:hover { transform: translateY(-1px); filter: brightness(1.12); }
     .research-link svg { flex: 0 0 auto; }
 
@@ -171,7 +170,6 @@
       .button { flex: 1; }
       .search { max-width: none; }
       .chart-box { height: 340px; }
-      .drawer-actions { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -254,12 +252,6 @@
             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
           </svg>
           View on TradingView
-        </a>
-        <a id="eastmoneyLink" class="research-link eastmoney" href="#" target="_blank" rel="noopener noreferrer">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-          View on Eastmoney
         </a>
       </div>
     </aside>
@@ -359,13 +351,12 @@
     }
 
     async function openChart(row) {
-      const {ticker, name, code, market, tradingview_url: tradingviewUrl, eastmoney_url: eastmoneyUrl} = row;
+      const {ticker, name, code, market, tradingview_url: tradingviewUrl} = row;
       const backdrop = document.querySelector('#drawerBackdrop');
       const message = document.querySelector('#drawerMessage');
       document.querySelector('#drawerTitle').textContent = name;
       document.querySelector('#drawerSubtitle').textContent = `${market} · ${code} · ${ticker}`;
       document.querySelector('#tradingviewLink').href = tradingviewUrl;
-      document.querySelector('#eastmoneyLink').href = eastmoneyUrl;
       message.textContent = 'Loading 3-month price history…';
       backdrop.classList.add('open'); document.body.style.overflow = 'hidden';
       try {

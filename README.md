@@ -11,7 +11,7 @@ The app tracks 306 selections—170 Shanghai/Shenzhen and 136 Hong Kong listings
 - gain from that reversal low (GG)
 - 1-, 3-, 5-, and 20-session returns
 - interactive 3-month Close/MA3 charts
-- exchange-aware research links to TradingView company profiles and Eastmoney detailed charts
+- exchange-aware TradingView company-profile links that open in the one-month view
 
 Each fresh scan is persisted to PostgreSQL on Railway. The database contains three tables:
 
