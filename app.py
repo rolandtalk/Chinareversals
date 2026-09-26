@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import threading
 import time
 import urllib.parse
 import urllib.request
@@ -15,6 +16,8 @@ from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
 import pandas as pd
 import yfinance as yf
+from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, create_engine, func, select
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -37,7 +40,91 @@ SOURCE_SHEET_NAME = os.getenv("SOURCE_SHEET_NAME", "股票清單")
 CACHE_TTL = int(os.getenv("CACHE_TTL", "900"))
 BATCH_SIZE = int(os.getenv("BATCH_SIZE", "45"))
 
-_CACHE: dict[str, object] = {"timestamp": 0.0, "rows": None}
+RAW_DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'chinareversals.db'}")
+if RAW_DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = RAW_DATABASE_URL.replace("postgres://", "postgresql+psycopg://", 1)
+elif RAW_DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = RAW_DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1)
+else:
+    DATABASE_URL = RAW_DATABASE_URL
+
+
+class Base(DeclarativeBase):
+    pass
+
+
+class Stock(Base):
+    __tablename__ = "stocks"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    code: Mapped[str] = mapped_column(String(12), unique=True, index=True)
+    ticker: Mapped[str] = mapped_column(String(24), unique=True, index=True)
+    name: Mapped[str] = mapped_column(String(160))
+    category: Mapped[str] = mapped_column(String(80), index=True)
+    market: Mapped[str] = mapped_column(String(12), default="CN")
+    as_of: Mapped[str] = mapped_column(String(16), default="")
+    source: Mapped[str] = mapped_column(Text, default="")
+    active: Mapped[bool] = mapped_column(Boolean, default=True, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), onupdate=lambda: datetime.now(timezone.utc))
+    results: Mapped[list["ScanResult"]] = relationship(back_populates="stock", cascade="all, delete-orphan")
+
+
+class ScanRun(Base):
+    __tablename__ = "scan_runs"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    source_mode: Mapped[str] = mapped_column(String(40), default="bundled_snapshot")
+    total_count: Mapped[int] = mapped_column(Integer, default=0)
+    available_count: Mapped[int] = mapped_column(Integer, default=0)
+    results: Mapped[list["ScanResult"]] = relationship(back_populates="run", cascade="all, delete-orphan")
+
+
+class ScanResult(Base):
+    __tablename__ = "scan_results"
+    __table_args__ = (UniqueConstraint("run_id", "stock_id", name="uq_scan_result_run_stock"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    run_id: Mapped[int] = mapped_column(ForeignKey("scan_runs.id", ondelete="CASCADE"), index=True)
+    stock_id: Mapped[int] = mapped_column(ForeignKey("stocks.id", ondelete="CASCADE"), index=True)
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
+    price: Mapped[float | None] = mapped_column(Float, nullable=True)
+    dg: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    gg: Mapped[float | None] = mapped_column(Float, nullable=True)
+    rsi: Mapped[float | None] = mapped_column(Float, nullable=True)
+    d1: Mapped[float | None] = mapped_column(Float, nullable=True)
+    d3: Mapped[float | None] = mapped_column(Float, nullable=True)
+    d5: Mapped[float | None] = mapped_column(Float, nullable=True)
+    d20: Mapped[float | None] = mapped_column(Float, nullable=True)
+    reversal_date: Mapped[str | None] = mapped_column(String(16), nullable=True)
+    run: Mapped[ScanRun] = relationship(back_populates="results")
+    stock: Mapped[Stock] = relationship(back_populates="results")
+
+
+ENGINE = create_engine(DATABASE_URL, pool_pre_ping=True)
+SessionLocal = sessionmaker(bind=ENGINE, expire_on_commit=False)
+_DB_LOCK = threading.Lock()
+_DB_READY = False
+
+_CACHE: dict[str, object] = {"timestamp": 0.0, "rows": None, "run_id": None, "source": None}
+
+
+def ensure_database() -> bool:
+    global _DB_READY
+    if _DB_READY:
+        return True
+    with _DB_LOCK:
+        if _DB_READY:
+            return True
+        try:
+            Base.metadata.create_all(ENGINE)
+            _DB_READY = True
+        except Exception as exc:
+            app.logger.warning("Database initialization failed: %s", exc)
+            return False
+    return True
 
 
 def _load_bundled_stocks() -> list[dict]:
@@ -102,11 +189,48 @@ def _load_public_sheet() -> list[dict]:
     return rows
 
 
+def _sync_stocks_to_database(rows: list[dict]) -> list[dict] | None:
+    if not ensure_database():
+        return None
+    with SessionLocal() as session:
+        existing = {stock.code: stock for stock in session.scalars(select(Stock)).all()}
+        for stock in existing.values():
+            stock.active = False
+        for row in rows:
+            stock = existing.get(row["code"])
+            if stock is None:
+                stock = Stock(code=row["code"], ticker=row["ticker"], name=row["name"], category=row["category"])
+                session.add(stock)
+            stock.ticker = row["ticker"]
+            stock.name = row["name"]
+            stock.category = row["category"]
+            stock.market = row.get("market", "CN")
+            stock.as_of = row.get("as_of", "")
+            stock.source = row.get("source", "")
+            stock.active = True
+        session.commit()
+        active = session.scalars(select(Stock).where(Stock.active.is_(True)).order_by(Stock.id)).all()
+        return [
+            {
+                "category": stock.category,
+                "market": stock.market,
+                "code": stock.code,
+                "name": stock.name,
+                "ticker": stock.ticker,
+                "as_of": stock.as_of,
+                "source": stock.source,
+            }
+            for stock in active
+        ]
+
+
 def load_stocks() -> tuple[list[dict], str]:
     try:
-        return _load_public_sheet(), "google_sheet"
+        rows, source_mode = _load_public_sheet(), "google_sheet"
     except Exception:
-        return _load_bundled_stocks(), "bundled_snapshot"
+        rows, source_mode = _load_bundled_stocks(), "bundled_snapshot"
+    database_rows = _sync_stocks_to_database(rows)
+    return (database_rows or rows), source_mode
 
 
 def calculate_rsi(close: pd.Series, period: int = 14) -> pd.Series:
@@ -235,6 +359,63 @@ def scan_stocks(stocks: list[dict]) -> list[dict]:
     return rows
 
 
+def persist_scan(rows: list[dict], source_mode: str) -> int | None:
+    if not ensure_database():
+        return None
+    with SessionLocal() as session:
+        stocks = {stock.ticker: stock for stock in session.scalars(select(Stock)).all()}
+        run = ScanRun(
+            source_mode=source_mode,
+            total_count=len(rows),
+            available_count=sum(row.get("price") is not None for row in rows),
+        )
+        session.add(run)
+        session.flush()
+        observed_at = datetime.now(timezone.utc)
+        for row in rows:
+            stock = stocks.get(row["ticker"])
+            if stock is None:
+                continue
+            session.add(
+                ScanResult(
+                    run_id=run.id,
+                    stock_id=stock.id,
+                    observed_at=observed_at,
+                    price=row.get("price"),
+                    dg=row.get("dg"),
+                    gg=row.get("gg"),
+                    rsi=row.get("rsi"),
+                    d1=row.get("d1"),
+                    d3=row.get("d3"),
+                    d5=row.get("d5"),
+                    d20=row.get("d20"),
+                    reversal_date=row.get("reversal_date"),
+                )
+            )
+        run.completed_at = datetime.now(timezone.utc)
+        session.commit()
+        return run.id
+
+
+def database_summary() -> dict:
+    if not ensure_database():
+        return {"connected": False, "engine": "unavailable"}
+    with SessionLocal() as session:
+        stock_count = session.scalar(select(func.count()).select_from(Stock).where(Stock.active.is_(True))) or 0
+        run_count = session.scalar(select(func.count()).select_from(ScanRun)) or 0
+        result_count = session.scalar(select(func.count()).select_from(ScanResult)) or 0
+        latest = session.scalar(select(ScanRun).order_by(ScanRun.id.desc()).limit(1))
+        return {
+            "connected": True,
+            "engine": ENGINE.dialect.name,
+            "stocks": stock_count,
+            "scan_runs": run_count,
+            "scan_results": result_count,
+            "latest_run_id": latest.id if latest else None,
+            "latest_completed_at": latest.completed_at.isoformat() if latest and latest.completed_at else None,
+        }
+
+
 @app.context_processor
 def inject_links():
     return {
@@ -274,21 +455,71 @@ def data():
             {
                 "rows": _CACHE["rows"],
                 "cached": True,
+                "run_id": _CACHE["run_id"],
+                "source": _CACHE["source"],
                 "generated_at": datetime.fromtimestamp(float(_CACHE["timestamp"])).isoformat(),
             }
         )
 
     stocks, source_mode = load_stocks()
     rows = scan_stocks(stocks)
-    _CACHE = {"timestamp": now, "rows": rows}
+    run_id = persist_scan(rows, source_mode)
+    _CACHE = {"timestamp": now, "rows": rows, "run_id": run_id, "source": source_mode}
     return jsonify(
         {
             "rows": rows,
             "cached": False,
             "source": source_mode,
+            "run_id": run_id,
             "generated_at": datetime.fromtimestamp(now).isoformat(),
         }
     )
+
+
+@app.get("/api/database-status")
+def database_status():
+    summary = database_summary()
+    return jsonify(summary), 200 if summary["connected"] else 503
+
+
+@app.get("/api/history/<ticker>")
+def price_history(ticker: str):
+    ticker = ticker.upper()
+    limit = min(max(request.args.get("limit", default=30, type=int), 1), 365)
+    if not ensure_database():
+        return jsonify({"error": "Database unavailable"}), 503
+    with SessionLocal() as session:
+        statement = (
+            select(ScanResult, ScanRun)
+            .join(Stock, ScanResult.stock_id == Stock.id)
+            .join(ScanRun, ScanResult.run_id == ScanRun.id)
+            .where(Stock.ticker == ticker)
+            .order_by(ScanResult.observed_at.desc())
+            .limit(limit)
+        )
+        records = session.execute(statement).all()
+        return jsonify(
+            {
+                "ticker": ticker,
+                "history": [
+                    {
+                        "run_id": result.run_id,
+                        "observed_at": result.observed_at.isoformat(),
+                        "price": result.price,
+                        "dg": result.dg,
+                        "gg": result.gg,
+                        "rsi": result.rsi,
+                        "d1": result.d1,
+                        "d3": result.d3,
+                        "d5": result.d5,
+                        "d20": result.d20,
+                        "reversal_date": result.reversal_date,
+                        "source": run.source_mode,
+                    }
+                    for result, run in records
+                ],
+            }
+        )
 
 
 @app.get("/api/chart/<ticker>")
@@ -314,7 +545,7 @@ def chart(ticker: str):
 
 @app.get("/health")
 def health():
-    return jsonify({"status": "ok", "app": "Chinareversals"})
+    return jsonify({"status": "ok", "app": "Chinareversals", "database": ensure_database()})
 
 
 if __name__ == "__main__":

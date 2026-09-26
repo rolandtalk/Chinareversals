@@ -34,3 +34,17 @@ def test_health_and_home():
     home = client.get("/")
     assert home.status_code == 200
     assert b"Chinareversals" in home.data
+
+
+def test_database_seed_and_status():
+    rows, source = app_module.load_stocks()
+    assert source in {"google_sheet", "bundled_snapshot"}
+    assert len(rows) == 170
+    summary = app_module.database_summary()
+    assert summary["connected"] is True
+    assert summary["stocks"] == 170
+
+    client = app_module.app.test_client()
+    response = client.get("/api/database-status")
+    assert response.status_code == 200
+    assert response.get_json()["stocks"] == 170

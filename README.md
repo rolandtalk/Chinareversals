@@ -12,6 +12,14 @@ The app tracks the 170 Shanghai/Shenzhen selections in the nine `鉅亨網 AI �
 - 1-, 3-, 5-, and 20-session returns
 - interactive 3-month Close/MA3 charts
 
+Each fresh scan is persisted to PostgreSQL on Railway. The database contains three tables:
+
+- `stocks` — the active stock universe and source metadata
+- `scan_runs` — one record for every completed Yahoo Finance scan
+- `scan_results` — the per-stock price and reversal metrics for each run
+
+`GET /api/database-status` reports row counts and the latest stored run. `GET /api/history/<ticker>` returns persisted scan history for a symbol.
+
 ## Run locally
 
 ```bash
@@ -32,6 +40,7 @@ Open <http://127.0.0.1:5000>.
 | `SOURCE_SHEET_NAME` | Source tab name | `股票清單` |
 | `CACHE_TTL` | Price-scan cache in seconds | `900` |
 | `BATCH_SIZE` | YFinance symbols per request | `45` |
+| `DATABASE_URL` | PostgreSQL connection URL; Railway injects this | local SQLite file |
 
 If the Google Sheet is publicly readable, the app refreshes the universe from it. Otherwise it uses the committed 170-row snapshot in `data/china_stocks.json`.
 
