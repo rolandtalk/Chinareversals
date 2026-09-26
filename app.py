@@ -158,7 +158,7 @@ def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dic
         tradingview_code = str(int(hk_code))
         return {
             "eastmoney_url": f"https://quote.eastmoney.com/hk/{hk_code}.html",
-            "tradingview_url": f"https://www.tradingview.com/symbols/HKEX-{tradingview_code}/",
+            "tradingview_url": f"https://www.tradingview.com/symbols/HKEX-{tradingview_code}/?timeframe=1M",
         }
 
     cn_code = code.zfill(6)
@@ -169,7 +169,7 @@ def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dic
     tradingview_exchange = "SSE" if is_shanghai else "SZSE"
     return {
         "eastmoney_url": f"https://quote.eastmoney.com/{eastmoney_exchange}{cn_code}.html",
-        "tradingview_url": f"https://www.tradingview.com/symbols/{tradingview_exchange}-{cn_code}/",
+        "tradingview_url": f"https://www.tradingview.com/symbols/{tradingview_exchange}-{cn_code}/?timeframe=1M",
     }
 
 
