@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#2563eb">
-  <meta name="description" content="China A-share MA3 reversal scanner based on the CNYES AI Winner stock universe.">
+  <meta name="description" content="China and Hong Kong MA3 reversal scanner based on the CNYES AI Winner stock universe.">
   <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="/static/manifest.json">
   <link rel="canonical" href="{{ base_url }}/">
@@ -101,6 +101,9 @@
     .button.primary { border-color: transparent; background: linear-gradient(135deg, #2563eb, #3b82f6); }
     .button:hover { filter: brightness(1.12); }
     .button:disabled { opacity: .55; cursor: wait; }
+    .market-filters { display: flex; gap: 6px; }
+    .market-filter { height: 44px; min-width: 54px; padding: 0 12px; border: 1px solid var(--line); border-radius: 13px; background: rgba(14,35,69,.65); cursor: pointer; font-size: .8rem; font-weight: 800; }
+    .market-filter.active { border-color: var(--blue); color: #fff; background: rgba(37,99,235,.35); }
     .status { padding: 11px 16px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
     .status strong { color: var(--blue-2); }
 
@@ -117,6 +120,8 @@
     .stock strong { color: #f3f7ff; }
     .stock small { color: var(--blue-2); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
     .category-pill { display: inline-flex; padding: 5px 8px; border: 1px solid rgba(96,165,250,.22); border-radius: 999px; color: #bdd4f2; background: rgba(37,99,235,.1); font-size: .73rem; font-weight: 700; }
+    .market-pill { display: inline-flex; min-width: 36px; justify-content: center; padding: 5px 8px; border-radius: 999px; color: #07101f; background: var(--blue-2); font-size: .72rem; font-weight: 900; }
+    .market-pill.hk { background: var(--amber); }
     .pos { color: var(--green); }
     .neg { color: var(--red); }
     .neutral { color: var(--muted); }
@@ -164,7 +169,7 @@
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark" aria-hidden="true"><span class="triangle"></span></div>
-        <div><h1>Chinareversals</h1><p class="eyebrow">A-share signal monitor</p></div>
+        <div><h1>Chinareversals</h1><p class="eyebrow">China + Hong Kong signals</p></div>
       </div>
       <nav class="links" aria-label="Project links">
         <a class="link" href="{{ google_sheet_url }}" target="_blank" rel="noopener">Google Sheet</a>
@@ -175,11 +180,12 @@
     <section class="hero">
       <div>
         <h2>Spot the turn.<br><span>Read the momentum.</span></h2>
-        <p class="hero-copy">MA3 reversal signals across the nine 鉅亨網 AI 股市贏家 categories. Prices come from Yahoo Finance; source groups and Chinese stock names come from the linked Google Sheet.</p>
+        <p class="hero-copy">MA3 reversal signals across mainland China and Hong Kong stocks in the nine 鉅亨網 AI 股市贏家 categories. Prices come from Yahoo Finance; markets, groups, and names come from the linked Google Sheet.</p>
       </div>
       <div class="hero-metrics">
         <div class="metric"><strong id="visibleCount">{{ stock_count }}</strong><span>Visible</span></div>
         <div class="metric"><strong>9</strong><span>Strategies</span></div>
+        <div class="metric"><strong>2</strong><span>Markets</span></div>
       </div>
     </section>
 
@@ -192,6 +198,11 @@
 
     <section class="workspace">
       <div class="toolbar">
+        <div class="market-filters" aria-label="Trading market">
+          <button class="market-filter active" data-market="all">All</button>
+          <button class="market-filter" data-market="CN">CN</button>
+          <button class="market-filter" data-market="HK">HK</button>
+        </div>
         <label class="search"><input id="searchInput" type="search" placeholder="Search code, ticker, or Chinese name" autocomplete="off"></label>
         <div class="actions">
           <button id="exportButton" class="button">Export CSV</button>
@@ -202,7 +213,7 @@
       <div class="table-wrap">
         <table>
           <thead><tr>
-            <th data-sort="code">Stock</th><th data-sort="category">Category</th><th data-sort="price">Price</th>
+            <th data-sort="code">Stock</th><th data-sort="category">Category</th><th data-sort="market">Market</th><th data-sort="price">Price</th>
             <th data-sort="dg">DG</th><th data-sort="gg">GG</th><th data-sort="rsi">RSI</th>
             <th data-sort="d1">1D</th><th data-sort="d3">3D</th><th data-sort="d5">5D</th><th data-sort="d20">20D</th>
           </tr></thead>
@@ -230,7 +241,7 @@
   </div>
 
   <script>
-    const state = { rows: [], category: 'all', query: '', sortKey: 'dg', sortDirection: 1, loading: true };
+    const state = { rows: [], category: 'all', market: 'all', query: '', sortKey: 'dg', sortDirection: 1, loading: true };
     const rowsEl = document.querySelector('#rows');
     const statusEl = document.querySelector('#statusLine');
     const emptyEl = document.querySelector('#emptyState');
@@ -250,8 +261,9 @@
       const query = state.query.trim().toLowerCase();
       const filtered = state.rows.filter(row => {
         const categoryMatch = state.category === 'all' || row.category === state.category;
+        const marketMatch = state.market === 'all' || row.market === state.market;
         const searchMatch = !query || `${row.code} ${row.ticker} ${row.name} ${row.category}`.toLowerCase().includes(query);
-        return categoryMatch && searchMatch;
+        return categoryMatch && marketMatch && searchMatch;
       });
       return filtered.sort((a, b) => {
         const av = a[state.sortKey], bv = b[state.sortKey];
@@ -270,6 +282,7 @@
         <tr data-ticker="${esc(row.ticker)}" data-name="${esc(row.name)}">
           <td><span class="stock"><strong>${esc(row.name)}</strong><small>${esc(row.code)} · ${esc(row.ticker)}</small></span></td>
           <td><span class="category-pill">${esc(row.category)}</span></td>
+          <td><span class="market-pill ${row.market === 'HK' ? 'hk' : ''}">${esc(row.market)}</span></td>
           <td>${number(row.price) == null ? (state.loading ? '<span class="skeleton"></span>' : '—') : Number(row.price).toFixed(2)}</td>
           <td>${number(row.dg) == null ? (state.loading ? '<span class="skeleton"></span>' : '—') : `${row.dg}d`}</td>
           <td>${metric(row.gg, '%')}</td><td>${metric(row.rsi)}</td><td>${metric(row.d1, '%')}</td>
@@ -356,6 +369,10 @@
       document.querySelectorAll('.category').forEach(item => item.classList.remove('active'));
       button.classList.add('active'); state.category = button.dataset.category; render();
     }));
+    document.querySelectorAll('.market-filter').forEach(button => button.addEventListener('click', () => {
+      document.querySelectorAll('.market-filter').forEach(item => item.classList.remove('active'));
+      button.classList.add('active'); state.market = button.dataset.market; render();
+    }));
     document.querySelector('#searchInput').addEventListener('input', event => { state.query = event.target.value; render(); });
     document.querySelectorAll('th[data-sort]').forEach(th => th.addEventListener('click', () => {
       const key = th.dataset.sort; state.sortDirection = state.sortKey === key ? -state.sortDirection : 1; state.sortKey = key; render();
@@ -365,8 +382,8 @@
     document.querySelector('#drawerBackdrop').addEventListener('click', event => { if (event.target.id === 'drawerBackdrop') closeDrawer(); });
     document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDrawer(); });
     document.querySelector('#exportButton').addEventListener('click', () => {
-      const headers = ['category','code','name','ticker','price','days_since_reversal','gain_since_reversal_pct','rsi','1d_pct','3d_pct','5d_pct','20d_pct'];
-      const csvRows = filteredRows().map(row => [row.category,row.code,row.name,row.ticker,row.price,row.dg,row.gg,row.rsi,row.d1,row.d3,row.d5,row.d20]);
+      const headers = ['category','market','code','name','ticker','price','days_since_reversal','gain_since_reversal_pct','rsi','1d_pct','3d_pct','5d_pct','20d_pct'];
+      const csvRows = filteredRows().map(row => [row.category,row.market,row.code,row.name,row.ticker,row.price,row.dg,row.gg,row.rsi,row.d1,row.d3,row.d5,row.d20]);
       const csv = [headers, ...csvRows].map(values => values.map(value => `"${String(value ?? '').replaceAll('"','""')}"`).join(',')).join('\n');
       const url = URL.createObjectURL(new Blob(['\ufeff' + csv], {type:'text/csv;charset=utf-8'}));
       const link = document.createElement('a'); link.href = url; link.download = `chinareversals-${new Date().toISOString().slice(0,10)}.csv`; link.click(); URL.revokeObjectURL(url);

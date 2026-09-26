@@ -8,13 +8,18 @@ def test_code_to_ticker():
     assert app_module.code_to_ticker("688082") == "688082.SS"
     assert app_module.code_to_ticker("000333") == "000333.SZ"
     assert app_module.code_to_ticker("399001") == "399001.SZ"
+    assert app_module.code_to_ticker("01888", "HK") == "1888.HK"
+    assert app_module.code_to_ticker("00006", "HK") == "0006.HK"
 
 
-def test_bundled_universe_has_nine_categories_and_170_rows():
+def test_bundled_universe_has_two_markets_nine_categories_and_306_rows():
     rows = app_module._load_bundled_stocks()
-    assert len(rows) == 170
+    assert len(rows) == 306
     assert len({row["category"] for row in rows}) == 9
-    assert all(row["ticker"] == app_module.code_to_ticker(row["code"]) for row in rows)
+    assert {row["market"] for row in rows} == {"CN", "HK"}
+    assert sum(row["market"] == "CN" for row in rows) == 170
+    assert sum(row["market"] == "HK" for row in rows) == 136
+    assert all(row["ticker"] == app_module.code_to_ticker(row["code"], row["market"]) for row in rows)
 
 
 def test_calculate_metrics():
@@ -39,12 +44,12 @@ def test_health_and_home():
 def test_database_seed_and_status():
     rows, source = app_module.load_stocks()
     assert source in {"google_sheet", "bundled_snapshot"}
-    assert len(rows) == 170
+    assert len(rows) == 306
     summary = app_module.database_summary()
     assert summary["connected"] is True
-    assert summary["stocks"] == 170
+    assert summary["stocks"] == 306
 
     client = app_module.app.test_client()
     response = client.get("/api/database-status")
     assert response.status_code == 200
-    assert response.get_json()["stocks"] == 170
+    assert response.get_json()["stocks"] == 306

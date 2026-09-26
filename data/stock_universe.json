@@ -1528,6 +1528,1230 @@
     "ticker": "600219.SS",
     "as_of": "2026-09-26",
     "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "01888",
+    "name": "建滔積層板",
+    "ticker": "1888.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "03396",
+    "name": "聯想控股",
+    "ticker": "3396.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "07747",
+    "name": "ＸＬ二南三星",
+    "ticker": "7747.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "02586",
+    "name": "多點數智",
+    "ticker": "2586.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "06185",
+    "name": "康希諾生物",
+    "ticker": "6185.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "01735",
+    "name": "中環新能源",
+    "ticker": "1735.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "02315",
+    "name": "百奧賽圖－Ｂ",
+    "ticker": "2315.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "02342",
+    "name": "京信通信",
+    "ticker": "2342.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "02028",
+    "name": "映美控股",
+    "ticker": "2028.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "00136",
+    "name": "中國儒意",
+    "ticker": "0136.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "波段強勢",
+    "market": "HK",
+    "code": "01300",
+    "name": "俊知集團",
+    "ticker": "1300.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00037",
+    "name": "遠東酒店實業",
+    "ticker": "0037.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00128",
+    "name": "安寧控股",
+    "ticker": "0128.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00080",
+    "name": "ＣＡＩ控股",
+    "ticker": "0080.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00126",
+    "name": "佳寧娜",
+    "ticker": "0126.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00084",
+    "name": "寶光實業",
+    "ticker": "0084.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00120",
+    "name": "COSMOPOL INT'L",
+    "ticker": "0120.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00018",
+    "name": "東方傳媒集團",
+    "ticker": "0018.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00039",
+    "name": "中國北大荒",
+    "ticker": "0039.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00048",
+    "name": "中國汽車內飾",
+    "ticker": "0048.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00053",
+    "name": "國浩集團",
+    "ticker": "0053.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00059",
+    "name": "天譽置業",
+    "ticker": "0059.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00060",
+    "name": "香港食品投資",
+    "ticker": "0060.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00070",
+    "name": "金粵控股",
+    "ticker": "0070.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00073",
+    "name": "亞洲果業",
+    "ticker": "0073.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00076",
+    "name": "誼礫控股",
+    "ticker": "0076.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00077",
+    "name": "進智公共交通",
+    "ticker": "0077.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00030",
+    "name": "雲白國際",
+    "ticker": "0030.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00035",
+    "name": "遠東發展",
+    "ticker": "0035.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00090",
+    "name": "普星能量",
+    "ticker": "0090.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整待變",
+    "market": "HK",
+    "code": "00093",
+    "name": "零在科技金融",
+    "ticker": "0093.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "整理轉強",
+    "market": "HK",
+    "code": "00148",
+    "name": "建滔集團",
+    "ticker": "0148.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "整理轉強",
+    "market": "HK",
+    "code": "02436",
+    "name": "凌雄科技",
+    "ticker": "2436.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "整理轉強",
+    "market": "HK",
+    "code": "03680",
+    "name": "瑞和數智",
+    "ticker": "3680.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "整理轉強",
+    "market": "HK",
+    "code": "08245",
+    "name": "烽翼集團",
+    "ticker": "8245.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "00100",
+    "name": "MINIMAX-W",
+    "ticker": "0100.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "00992",
+    "name": "聯想集團",
+    "ticker": "0992.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "01548",
+    "name": "金斯瑞生物科技",
+    "ticker": "1548.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "02015",
+    "name": "理想汽車－Ｗ",
+    "ticker": "2015.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "01766",
+    "name": "中國中車",
+    "ticker": "1766.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "02128",
+    "name": "中國聯塑",
+    "ticker": "2128.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "00293",
+    "name": "國泰航空",
+    "ticker": "0293.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "00081",
+    "name": "中國海外宏洋集團",
+    "ticker": "0081.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "03788",
+    "name": "罕王黃金",
+    "ticker": "3788.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "黑紅黑紅",
+    "market": "HK",
+    "code": "00580",
+    "name": "賽晶科技",
+    "ticker": "0580.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "01787",
+    "name": "山東黃金",
+    "ticker": "1787.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "02099",
+    "name": "中國黃金國際",
+    "ticker": "2099.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00175",
+    "name": "吉利汽車",
+    "ticker": "0175.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "01519",
+    "name": "極兔速遞－Ｗ",
+    "ticker": "1519.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "01208",
+    "name": "五礦資源",
+    "ticker": "1208.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00241",
+    "name": "阿里健康",
+    "ticker": "0241.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "02208",
+    "name": "金風科技",
+    "ticker": "2208.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "01021",
+    "name": "華沿機器人",
+    "ticker": "1021.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00322",
+    "name": "康師傅控股",
+    "ticker": "0322.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00270",
+    "name": "粵海投資",
+    "ticker": "0270.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00881",
+    "name": "中升控股",
+    "ticker": "0881.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "01866",
+    "name": "中國心連心化肥",
+    "ticker": "1866.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00340",
+    "name": "潼關黃金",
+    "ticker": "0340.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00101",
+    "name": "恒隆地產",
+    "ticker": "0101.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00916",
+    "name": "龍源電力",
+    "ticker": "0916.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00697",
+    "name": "首程控股",
+    "ticker": "0697.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "00805",
+    "name": "新吉奧房車",
+    "ticker": "0805.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "02451",
+    "name": "綠源集團控股",
+    "ticker": "2451.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "01318",
+    "name": "毛戈平",
+    "ticker": "1318.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤跌待彈",
+    "market": "HK",
+    "code": "02339",
+    "name": "京西國際",
+    "ticker": "2339.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "02589",
+    "name": "滬上阿姨",
+    "ticker": "2589.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "02245",
+    "name": "力勤資源",
+    "ticker": "2245.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01112",
+    "name": "Ｈ＆Ｈ國際控股",
+    "ticker": "1112.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01536",
+    "name": "煜榮集團",
+    "ticker": "1536.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01513",
+    "name": "麗珠醫藥",
+    "ticker": "1513.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "06623",
+    "name": "陸控",
+    "ticker": "6623.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "02411",
+    "name": "百果園集團",
+    "ticker": "2411.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01709",
+    "name": "德林控股",
+    "ticker": "1709.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01723",
+    "name": "恆月控股",
+    "ticker": "1723.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01939",
+    "name": "上善黃金",
+    "ticker": "1939.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01410",
+    "name": "安領國際",
+    "ticker": "1410.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01003",
+    "name": "歡喜傳媒",
+    "ticker": "1003.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "02457",
+    "name": "步陽國際",
+    "ticker": "2457.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01617",
+    "name": "南方通信",
+    "ticker": "1617.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "03321",
+    "name": "中科集團控股",
+    "ticker": "3321.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01615",
+    "name": "奧邦建築",
+    "ticker": "1615.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01284",
+    "name": "新傳企劃",
+    "ticker": "1284.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "01122",
+    "name": "慶鈴汽車股份",
+    "ticker": "1122.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "08275",
+    "name": "中國新消費集團",
+    "ticker": "8275.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超強股",
+    "market": "HK",
+    "code": "08131",
+    "name": "辰罡科技",
+    "ticker": "8131.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "00823",
+    "name": "領展房產基金",
+    "ticker": "0823.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "00551",
+    "name": "裕元集團",
+    "ticker": "0551.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "02256",
+    "name": "和譽－Ｂ",
+    "ticker": "2256.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "02126",
+    "name": "藥明巨諾－Ｂ",
+    "ticker": "2126.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "02503",
+    "name": "中深建業",
+    "ticker": "2503.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "01720",
+    "name": "普天通信集團",
+    "ticker": "1720.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "01346",
+    "name": "利華控股集團",
+    "ticker": "1346.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "01110",
+    "name": "金活醫藥集團",
+    "ticker": "1110.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "01461",
+    "name": "中泰期貨",
+    "ticker": "1461.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "00092",
+    "name": "冠軍科技集團",
+    "ticker": "0092.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤堅高檔",
+    "market": "HK",
+    "code": "02048",
+    "name": "易居企業控股",
+    "ticker": "2048.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00939",
+    "name": "建設銀行",
+    "ticker": "0939.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01288",
+    "name": "農業銀行",
+    "ticker": "1288.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00699",
+    "name": "均勝電子",
+    "ticker": "0699.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01530",
+    "name": "三生製藥",
+    "ticker": "1530.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01658",
+    "name": "郵儲銀行",
+    "ticker": "1658.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00811",
+    "name": "新華文軒",
+    "ticker": "0811.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01276",
+    "name": "恒瑞醫藥",
+    "ticker": "1276.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00998",
+    "name": "中信銀行",
+    "ticker": "0998.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00753",
+    "name": "中國國航",
+    "ticker": "0753.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00144",
+    "name": "招商局港口",
+    "ticker": "0144.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00165",
+    "name": "中國光大控股",
+    "ticker": "0165.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01066",
+    "name": "威高股份",
+    "ticker": "1066.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01104",
+    "name": "亞太資源",
+    "ticker": "1104.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01489",
+    "name": "GC CONSTRUCTION",
+    "ticker": "1489.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00326",
+    "name": "中國星集團",
+    "ticker": "0326.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "00696",
+    "name": "中國民航信息網絡",
+    "ticker": "0696.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01361",
+    "name": "３６１度",
+    "ticker": "1361.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01330",
+    "name": "綠色動力環保",
+    "ticker": "1330.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01333",
+    "name": "博雷頓",
+    "ticker": "1333.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "盤整走軟",
+    "market": "HK",
+    "code": "01167",
+    "name": "加科思－Ｂ",
+    "ticker": "1167.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "02800",
+    "name": "盈富基金",
+    "ticker": "2800.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "02388",
+    "name": "中銀香港",
+    "ticker": "2388.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "00006",
+    "name": "電能實業",
+    "ticker": "0006.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "00631",
+    "name": "三一國際",
+    "ticker": "0631.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "00568",
+    "name": "山東墨龍",
+    "ticker": "0568.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "01072",
+    "name": "東方電氣",
+    "ticker": "1072.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "03188",
+    "name": "華夏滬深三百",
+    "ticker": "3188.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "07568",
+    "name": "ＦＩ二南方納指",
+    "ticker": "7568.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "01157",
+    "name": "中聯重科",
+    "ticker": "1157.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "03110",
+    "name": "ＧＸ恒生股息",
+    "ticker": "3110.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "03419",
+    "name": "Ａ ＧＸ恒指備兌",
+    "ticker": "3419.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "00917",
+    "name": "趣致集團",
+    "ticker": "0917.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "01186",
+    "name": "中國鐵建",
+    "ticker": "1186.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "02610",
+    "name": "南山鋁業國際",
+    "ticker": "2610.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "01907",
+    "name": "中國旭陽集團",
+    "ticker": "1907.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "00363",
+    "name": "上海實業控股",
+    "ticker": "0363.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "03899",
+    "name": "中集安瑞科",
+    "ticker": "3899.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "02866",
+    "name": "中遠海發",
+    "ticker": "2866.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "00956",
+    "name": "新天綠色能源",
+    "ticker": "0956.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "超弱股",
+    "market": "HK",
+    "code": "01753",
+    "name": "兌吧",
+    "ticker": "1753.HK",
+    "as_of": "2026-09-26",
+    "source": "https://www.cnyes.com/stock/ai-winner"
   }
 ]
 

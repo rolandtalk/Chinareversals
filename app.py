@@ -1,4 +1,4 @@
-"""China A-share MA3 reversal scanner."""
+"""China and Hong Kong MA3 reversal scanner."""
 
 from __future__ import annotations
 
@@ -21,7 +21,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship,
 
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_FILE = BASE_DIR / "data" / "china_stocks.json"
+DATA_FILE = BASE_DIR / "data" / "stock_universe.json"
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
@@ -132,8 +132,11 @@ def _load_bundled_stocks() -> list[dict]:
         return json.load(handle)
 
 
-def code_to_ticker(code: str) -> str:
-    """Convert a six-digit mainland code to Yahoo Finance notation."""
+def code_to_ticker(code: str, market: str = "CN") -> str:
+    """Convert mainland or Hong Kong codes to Yahoo Finance notation."""
+    market = str(market).strip().upper()
+    if market == "HK":
+        return f"{str(int(str(code).strip())).zfill(4)}.HK"
     code = str(code).strip().zfill(6)
     if code == "399001":
         return "399001.SZ"
@@ -170,16 +173,18 @@ def _load_public_sheet() -> list[dict]:
         values = [cell.get("v", "") if cell else "" for cell in raw_row.get("c", [])]
         if len(values) < 4 or str(values[0]).strip() in {"", "選股條件"}:
             continue
-        code = str(values[2]).strip().zfill(6)
+        market = str(values[1] or "CN").strip().upper()
+        width = 5 if market == "HK" else 6
+        code = str(values[2]).strip().zfill(width)
         if not code.isdigit():
             continue
         rows.append(
             {
                 "category": str(values[0]).strip(),
-                "market": str(values[1] or "CN").strip(),
+                "market": market,
                 "code": code,
                 "name": str(values[3]).strip(),
-                "ticker": code_to_ticker(code),
+                "ticker": code_to_ticker(code, market),
                 "as_of": str(values[4]).strip() if len(values) > 4 else "",
                 "source": str(values[5]).strip() if len(values) > 5 else "",
             }

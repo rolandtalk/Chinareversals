@@ -1,10 +1,10 @@
 # Chinareversals
 
-China A-share MA3 reversal scanner, adapted from [reversal_list_CursorAI](https://github.com/rolandtalk/reversal_list_CursorAI).
+China and Hong Kong MA3 reversal scanner, adapted from [reversal_list_CursorAI](https://github.com/rolandtalk/reversal_list_CursorAI).
 
 **Live app:** [chinareversals-production.up.railway.app](https://chinareversals-production.up.railway.app)
 
-The app tracks the 170 Shanghai/Shenzhen selections in the nine `鉅亨網 AI 股市贏家` categories captured on 2026-09-26. It preserves the original Chinese names and stock codes, maps each listing to its Yahoo Finance ticker, and calculates:
+The app tracks 306 selections—170 Shanghai/Shenzhen and 136 Hong Kong listings—in the nine `鉅亨網 AI 股市贏家` categories captured on 2026-09-26. It preserves the source market, original names and stock codes, maps each listing to its Yahoo Finance ticker, and calculates:
 
 - latest close and RSI(14)
 - days since the latest below-MA3 reversal low (DG)
@@ -42,7 +42,7 @@ Open <http://127.0.0.1:5000>.
 | `BATCH_SIZE` | YFinance symbols per request | `45` |
 | `DATABASE_URL` | PostgreSQL connection URL; Railway injects this | local SQLite file |
 
-If the Google Sheet is publicly readable, the app refreshes the universe from it. Otherwise it uses the committed 170-row snapshot in `data/china_stocks.json`.
+If the Google Sheet is publicly readable, the app refreshes the universe from it. Otherwise it uses the committed 306-row snapshot in `data/stock_universe.json`.
 
 ## Data note
 
