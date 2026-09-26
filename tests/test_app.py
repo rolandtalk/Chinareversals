@@ -14,15 +14,15 @@ def test_code_to_ticker():
 
 def test_stock_research_links_are_exchange_aware():
     assert app_module.stock_research_links("600519", "CN", "600519.SS") == {
-        "eastmoney_url": "https://quote.eastmoney.com/sh600519.html",
+        "eastmoney_url": "https://wap.eastmoney.com/quote/stock/1.600519.html",
         "tradingview_url": "https://www.tradingview.com/symbols/SSE-600519/?timeframe=1M",
     }
     assert app_module.stock_research_links("000333", "CN", "000333.SZ") == {
-        "eastmoney_url": "https://quote.eastmoney.com/sz000333.html",
+        "eastmoney_url": "https://wap.eastmoney.com/quote/stock/0.000333.html",
         "tradingview_url": "https://www.tradingview.com/symbols/SZSE-000333/?timeframe=1M",
     }
     assert app_module.stock_research_links("00006", "HK", "0006.HK") == {
-        "eastmoney_url": "https://quote.eastmoney.com/hk/00006.html",
+        "eastmoney_url": "https://wap.eastmoney.com/quote/stock/116.00006.html",
         "tradingview_url": "https://www.tradingview.com/symbols/HKEX-6/?timeframe=1M",
     }
 
@@ -64,7 +64,7 @@ def test_stock_api_includes_research_links():
     assert response.status_code == 200
     stocks = response.get_json()["stocks"]
     assert stocks
-    assert all(stock["eastmoney_url"].startswith("https://quote.eastmoney.com/") for stock in stocks)
+    assert all(stock["eastmoney_url"].startswith("https://wap.eastmoney.com/quote/stock/") for stock in stocks)
     assert all(stock["tradingview_url"].startswith("https://www.tradingview.com/symbols/") for stock in stocks)
     assert all(stock["tradingview_url"].endswith("?timeframe=1M") for stock in stocks)
 
