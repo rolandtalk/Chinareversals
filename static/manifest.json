@@ -1,0 +1,9 @@
+{
+  "name": "Chinareversals",
+  "short_name": "CN Reversals",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081225",
+  "theme_color": "#2563eb",
+  "icons": [{"src": "/static/favicon.svg", "sizes": "any", "type": "image/svg+xml"}]
+}
