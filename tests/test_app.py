@@ -42,6 +42,15 @@ def test_calculate_metrics():
     assert result is not None
     assert result["price"] == 12.5
     assert result["gg"] > 0
+    assert result["d60"] is None
+
+
+def test_calculate_metrics_includes_60_session_return():
+    index = pd.date_range("2026-01-01", periods=70, freq="D")
+    prices = [10 + i * 0.1 for i in range(60)] + [16, 15.5, 15, 14.5, 14.8, 15.1, 15.4, 15.8, 16.1, 16.5]
+    result = app_module.calculate_metrics(pd.DataFrame({"Close": prices}, index=index))
+    assert result is not None
+    assert result["d60"] == 51.38
 
 
 def test_health_and_home():
@@ -54,6 +63,9 @@ def test_health_and_home():
     assert b"Chinareversals" in home.data
     assert b"View on TradingView" in home.data
     assert b"View on Eastmoney" not in home.data
+    assert b'data-sort="category"' not in home.data
+    assert b'data-sort="d60"' in home.data
+    assert b'class="stock-column"' in home.data
 
 
 def test_stock_api_includes_research_links():

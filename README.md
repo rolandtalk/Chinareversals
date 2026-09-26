@@ -9,7 +9,7 @@ The app tracks 314 selections—176 Shanghai/Shenzhen and 138 Hong Kong listings
 - latest close and RSI(14)
 - days since the latest below-MA3 reversal low (DG)
 - gain from that reversal low (GG)
-- 1-, 3-, 5-, and 20-session returns
+- 1-, 3-, 5-, 20-, and 60-session returns
 - interactive 3-month Close/MA3 charts
 - exchange-aware TradingView company-profile links that open in the one-month view
 

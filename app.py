@@ -327,6 +327,7 @@ def calculate_metrics(df: pd.DataFrame) -> dict | None:
         "d3": gain(3),
         "d5": gain(5),
         "d20": gain(20),
+        "d60": gain(60),
         "reversal_date": reversal_date.strftime("%Y-%m-%d"),
     }
 
@@ -348,7 +349,7 @@ def _download_chunk(tickers: list[str]) -> dict[str, dict | None]:
     try:
         data = yf.download(
             tickers,
-            period="3mo",
+            period="6mo",
             interval="1d",
             group_by="ticker",
             auto_adjust=False,
@@ -388,6 +389,7 @@ def scan_stocks(stocks: list[dict]) -> list[dict]:
                 "d3": None,
                 "d5": None,
                 "d20": None,
+                "d60": None,
                 "reversal_date": None,
             }
         )
