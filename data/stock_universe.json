@@ -2752,6 +2752,77 @@
     "ticker": "1753.HK",
     "as_of": "2026-09-26",
     "source": "https://www.cnyes.com/stock/ai-winner"
+  },
+  {
+    "category": "創新藥",
+    "market": "CN",
+    "code": "600276",
+    "name": "恒瑞医药",
+    "ticker": "600276.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "CN",
+    "code": "688235",
+    "name": "百济神州",
+    "ticker": "688235.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "HK",
+    "code": "01801",
+    "name": "信达生物",
+    "ticker": "1801.HK",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "CN",
+    "code": "688331",
+    "name": "荣昌生物",
+    "ticker": "688331.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "CN",
+    "code": "688180",
+    "name": "君实生物",
+    "ticker": "688180.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "CN",
+    "code": "002422",
+    "name": "科伦药业",
+    "ticker": "002422.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "CN",
+    "code": "688506",
+    "name": "百利天恒",
+    "ticker": "688506.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
+  },
+  {
+    "category": "創新藥",
+    "market": "HK",
+    "code": "09926",
+    "name": "康方生物",
+    "ticker": "9926.HK",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（創新藥名單）"
   }
 ]
-
