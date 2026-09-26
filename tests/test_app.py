@@ -24,14 +24,15 @@ def test_stock_research_links_are_exchange_aware():
     }
 
 
-def test_bundled_universe_has_two_markets_ten_categories_and_314_rows():
+def test_bundled_universe_has_two_markets_eleven_categories_and_319_rows():
     rows = app_module._load_bundled_stocks()
-    assert len(rows) == 314
-    assert len({row["category"] for row in rows}) == 10
+    assert len(rows) == 319
+    assert len({row["category"] for row in rows}) == 11
     assert {row["market"] for row in rows} == {"CN", "HK"}
-    assert sum(row["market"] == "CN" for row in rows) == 176
+    assert sum(row["market"] == "CN" for row in rows) == 181
     assert sum(row["market"] == "HK" for row in rows) == 138
     assert sum(row["category"] == "創新藥" for row in rows) == 8
+    assert sum(row["category"] == "創新藥產業鏈" for row in rows) == 5
     assert all(row["ticker"] == app_module.code_to_ticker(row["code"], row["market"]) for row in rows)
 
 
@@ -82,12 +83,12 @@ def test_stock_api_includes_research_links():
 def test_database_seed_and_status():
     rows, source = app_module.load_stocks()
     assert source in {"google_sheet", "bundled_snapshot"}
-    assert len(rows) == 314
+    assert len(rows) == 319
     summary = app_module.database_summary()
     assert summary["connected"] is True
-    assert summary["stocks"] == 314
+    assert summary["stocks"] == 319
 
     client = app_module.app.test_client()
     response = client.get("/api/database-status")
     assert response.status_code == 200
-    assert response.get_json()["stocks"] == 314
+    assert response.get_json()["stocks"] == 319

@@ -4,7 +4,7 @@ China and Hong Kong MA3 reversal scanner, adapted from [reversal_list_CursorAI](
 
 **Live app:** [chinareversals-production.up.railway.app](https://chinareversals-production.up.railway.app)
 
-The app tracks 314 selections—176 Shanghai/Shenzhen and 138 Hong Kong listings. This includes 306 names across the nine `鉅亨網 AI 股市贏家` categories captured on 2026-09-26 plus eight user-selected innovative-drug companies added on 2026-09-27. It preserves the source market, original names and stock codes, maps each listing to its Yahoo Finance ticker, and calculates:
+The app tracks 319 selections—181 Shanghai/Shenzhen and 138 Hong Kong listings. This includes 306 names across the nine `鉅亨網 AI 股市贏家` categories captured on 2026-09-26, eight user-selected innovative-drug companies, and five innovative-drug supply-chain companies added on 2026-09-27. It preserves the source market, original names and stock codes, maps each listing to its Yahoo Finance ticker, and calculates:
 
 - latest close and RSI(14)
 - days since the latest below-MA3 reversal low (DG)
