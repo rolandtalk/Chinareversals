@@ -28,6 +28,9 @@ app = Flask(__name__, static_folder="static", template_folder="templates")
 CORS(app)
 
 APP_BASE_URL = os.getenv("APP_BASE_URL", "http://127.0.0.1:5000").rstrip("/")
+PRODUCTION_URL = os.getenv(
+    "PRODUCTION_URL", "https://chinareversals-production.up.railway.app"
+).rstrip("/")
 GITHUB_REPO_URL = os.getenv(
     "GITHUB_REPO_URL", "https://github.com/rolandtalk/Chinareversals"
 )
@@ -635,6 +638,7 @@ def database_summary() -> dict:
 def inject_links():
     return {
         "base_url": APP_BASE_URL,
+        "production_url": PRODUCTION_URL,
         "github_repo_url": GITHUB_REPO_URL,
         "google_sheet_url": GOOGLE_SHEET_URL,
     }

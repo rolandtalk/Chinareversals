@@ -73,6 +73,8 @@ def test_health_and_home():
     home = client.get("/")
     assert home.status_code == 200
     assert b"Chinareversals" in home.data
+    assert b'href="https://chinareversals-production.up.railway.app"' in home.data
+    assert b">Production</a>" in home.data
     assert b"View on TradingView" in home.data
     assert b"View on Eastmoney" not in home.data
     assert b'data-sort="category"' not in home.data

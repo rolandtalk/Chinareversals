@@ -54,6 +54,7 @@ Open <http://127.0.0.1:5000>.
 | Variable | Purpose | Default |
 | --- | --- | --- |
 | `APP_BASE_URL` | Canonical production URL | local URL |
+| `PRODUCTION_URL` | Header link to the deployed app | Railway production domain |
 | `GITHUB_REPO_URL` | Header GitHub link | this repository |
 | `GOOGLE_SHEET_ID` | Source stock-list Sheet | current CNYES capture |
 | `SOURCE_SHEET_NAME` | Source tab name | `股票清單` |
