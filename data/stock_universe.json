@@ -540,22 +540,22 @@
     "source": "https://www.cnyes.com/stock/ai-winner"
   },
   {
-    "category": "黑紅黑紅",
+    "category": "世界第一",
     "market": "CN",
     "code": "000333",
-    "name": "美的集團",
+    "name": "美的集团",
     "ticker": "000333.SZ",
-    "as_of": "2026-09-26",
-    "source": "https://www.cnyes.com/stock/ai-winner"
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
   },
   {
-    "category": "黑紅黑紅",
+    "category": "世界第一",
     "market": "CN",
     "code": "600066",
-    "name": "宇通客車",
+    "name": "宇通客车",
     "ticker": "600066.SS",
-    "as_of": "2026-09-26",
-    "source": "https://www.cnyes.com/stock/ai-winner"
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
   },
   {
     "category": "黑紅黑紅",
@@ -846,13 +846,13 @@
     "source": "https://www.cnyes.com/stock/ai-winner"
   },
   {
-    "category": "超強股",
+    "category": "PCB產業鏈",
     "market": "CN",
     "code": "601208",
-    "name": "東材科技",
+    "name": "东材科技",
     "ticker": "601208.SS",
-    "as_of": "2026-09-26",
-    "source": "https://www.cnyes.com/stock/ai-winner"
+    "as_of": "2026-09-27",
+    "source": "使用者指定（PCB產業鏈截圖）"
   },
   {
     "category": "超強股",
@@ -1224,13 +1224,13 @@
     "source": "https://www.cnyes.com/stock/ai-winner"
   },
   {
-    "category": "盤整走軟",
+    "category": "世界第一",
     "market": "CN",
     "code": "600018",
-    "name": "上港集團",
+    "name": "上港集团",
     "ticker": "600018.SS",
-    "as_of": "2026-09-26",
-    "source": "https://www.cnyes.com/stock/ai-winner"
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
   },
   {
     "category": "盤整走軟",
@@ -1359,13 +1359,13 @@
     "source": "https://www.cnyes.com/stock/ai-winner"
   },
   {
-    "category": "超弱股",
+    "category": "世界第一",
     "market": "CN",
     "code": "600176",
-    "name": "中國巨石",
+    "name": "中国巨石",
     "ticker": "600176.SS",
-    "as_of": "2026-09-26",
-    "source": "https://www.cnyes.com/stock/ai-winner"
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
   },
   {
     "category": "超弱股",
@@ -1386,13 +1386,13 @@
     "source": "https://www.cnyes.com/stock/ai-winner"
   },
   {
-    "category": "超弱股",
+    "category": "世界第一",
     "market": "CN",
     "code": "600309",
-    "name": "萬華化學",
+    "name": "万华化学",
     "ticker": "600309.SS",
-    "as_of": "2026-09-26",
-    "source": "https://www.cnyes.com/stock/ai-winner"
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
   },
   {
     "category": "超弱股",
@@ -1431,7 +1431,7 @@
     "source": "https://www.cnyes.com/stock/ai-winner"
   },
   {
-    "category": "超弱股",
+    "category": "世界第一",
     "market": "CN",
     "code": "600031",
     "name": "三一重工",
@@ -2878,5 +2878,437 @@
     "ticker": "300759.SZ",
     "as_of": "2026-09-27",
     "source": "使用者指定（創新藥產業鏈截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "300750",
+    "name": "宁德时代",
+    "ticker": "300750.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002709",
+    "name": "天赐材料",
+    "ticker": "002709.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "300207",
+    "name": "欣旺达",
+    "ticker": "300207.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002812",
+    "name": "恩捷股份",
+    "ticker": "002812.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000009",
+    "name": "中国宝安",
+    "ticker": "000009.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600110",
+    "name": "诺德股份",
+    "ticker": "600110.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002594",
+    "name": "比亚迪",
+    "ticker": "002594.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002050",
+    "name": "三花智控",
+    "ticker": "002050.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600660",
+    "name": "福耀玻璃",
+    "ticker": "600660.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002085",
+    "name": "万丰奥威",
+    "ticker": "002085.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "603730",
+    "name": "岱美股份",
+    "ticker": "603730.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "603121",
+    "name": "华培动力",
+    "ticker": "603121.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002001",
+    "name": "新和成",
+    "ticker": "002001.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "603260",
+    "name": "合盛硅业",
+    "ticker": "603260.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002064",
+    "name": "华峰化学",
+    "ticker": "002064.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600352",
+    "name": "浙江龙盛",
+    "ticker": "600352.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000703",
+    "name": "恒逸石化",
+    "ticker": "000703.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600328",
+    "name": "中盐化工",
+    "ticker": "600328.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "301069",
+    "name": "凯盛新材",
+    "ticker": "301069.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "301565",
+    "name": "中仑新材",
+    "ticker": "301565.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "603993",
+    "name": "洛阳钼业",
+    "ticker": "603993.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "601600",
+    "name": "中国铝业",
+    "ticker": "601600.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600111",
+    "name": "北方稀土",
+    "ticker": "600111.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000657",
+    "name": "中钨高新",
+    "ticker": "000657.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000629",
+    "name": "钒钛股份",
+    "ticker": "000629.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000960",
+    "name": "锡业股份",
+    "ticker": "000960.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002714",
+    "name": "牧原股份",
+    "ticker": "002714.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000651",
+    "name": "格力电器",
+    "ticker": "000651.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "603288",
+    "name": "海天味业",
+    "ticker": "603288.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600873",
+    "name": "梅花生物",
+    "ticker": "600873.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "688363",
+    "name": "华熙生物",
+    "ticker": "688363.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002678",
+    "name": "珠江钢琴",
+    "ticker": "002678.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "601138",
+    "name": "工业富联",
+    "ticker": "601138.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002475",
+    "name": "立讯精密",
+    "ticker": "002475.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000725",
+    "name": "京东方A",
+    "ticker": "000725.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "300433",
+    "name": "蓝思科技",
+    "ticker": "300433.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002938",
+    "name": "鹏鼎控股",
+    "ticker": "002938.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002241",
+    "name": "歌尔股份",
+    "ticker": "002241.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "002415",
+    "name": "海康威视",
+    "ticker": "002415.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "601766",
+    "name": "中国中车",
+    "ticker": "601766.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "000425",
+    "name": "徐工机械",
+    "ticker": "000425.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600320",
+    "name": "振华重工",
+    "ticker": "600320.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "603337",
+    "name": "杰克科技",
+    "ticker": "603337.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "世界第一",
+    "market": "CN",
+    "code": "600150",
+    "name": "中国船舶",
+    "ticker": "600150.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（A股50支世界第一截圖）"
+  },
+  {
+    "category": "PCB產業鏈",
+    "market": "CN",
+    "code": "002436",
+    "name": "兴森科技",
+    "ticker": "002436.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（PCB產業鏈截圖）"
+  },
+  {
+    "category": "PCB產業鏈",
+    "market": "CN",
+    "code": "301217",
+    "name": "铜冠铜箔",
+    "ticker": "301217.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（PCB產業鏈截圖）"
+  },
+  {
+    "category": "PCB產業鏈",
+    "market": "CN",
+    "code": "688300",
+    "name": "联瑞新材",
+    "ticker": "688300.SS",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（PCB產業鏈截圖）"
+  },
+  {
+    "category": "PCB產業鏈",
+    "market": "CN",
+    "code": "002463",
+    "name": "沪电股份",
+    "ticker": "002463.SZ",
+    "as_of": "2026-09-27",
+    "source": "使用者指定（PCB產業鏈截圖）"
   }
 ]
