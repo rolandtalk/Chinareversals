@@ -3310,5 +3310,2192 @@
     "ticker": "002463.SZ",
     "as_of": "2026-09-27",
     "source": "使用者指定（PCB產業鏈截圖）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300999",
+    "name": "金龙鱼",
+    "ticker": "300999.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300498",
+    "name": "温氏股份",
+    "ticker": "300498.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002311",
+    "name": "海大集团",
+    "ticker": "002311.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000876",
+    "name": "新希望",
+    "ticker": "000876.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600737",
+    "name": "中粮糖业",
+    "ticker": "600737.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601118",
+    "name": "海南橡胶",
+    "ticker": "601118.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002157",
+    "name": "正邦科技",
+    "ticker": "002157.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600598",
+    "name": "北大荒",
+    "ticker": "600598.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "605198",
+    "name": "安德利",
+    "ticker": "605198.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：农林牧渔）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600989",
+    "name": "宝丰能源",
+    "ticker": "600989.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：基础化工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000792",
+    "name": "盐湖股份",
+    "ticker": "000792.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：基础化工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000408",
+    "name": "藏格矿业",
+    "ticker": "000408.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：基础化工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002648",
+    "name": "卫星化学",
+    "ticker": "002648.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：基础化工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688585",
+    "name": "上纬新材",
+    "ticker": "688585.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：基础化工／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600010",
+    "name": "包钢股份",
+    "ticker": "600010.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000708",
+    "name": "中信特钢",
+    "ticker": "000708.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600295",
+    "name": "鄂尔多斯",
+    "ticker": "600295.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001203",
+    "name": "大中矿业",
+    "ticker": "001203.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600282",
+    "name": "南钢股份",
+    "ticker": "600282.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000959",
+    "name": "首钢股份",
+    "ticker": "000959.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000932",
+    "name": "华菱钢铁",
+    "ticker": "000932.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601123",
+    "name": "马矿股份",
+    "ticker": "601123.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：钢铁）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601899",
+    "name": "紫金矿业",
+    "ticker": "601899.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：有色金属）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002379",
+    "name": "宏桥控股",
+    "ticker": "002379.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：有色金属）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600547",
+    "name": "山东黄金",
+    "ticker": "600547.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：有色金属）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001280",
+    "name": "中国铀业",
+    "ticker": "001280.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：有色金属）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600489",
+    "name": "中金黄金",
+    "ticker": "600489.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：有色金属）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601225",
+    "name": "陕西煤业",
+    "ticker": "601225.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600188",
+    "name": "兖矿能源",
+    "ticker": "600188.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601898",
+    "name": "中煤能源",
+    "ticker": "601898.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002128",
+    "name": "电投能源",
+    "ticker": "002128.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601699",
+    "name": "潞安环能",
+    "ticker": "601699.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600985",
+    "name": "淮北矿业",
+    "ticker": "600985.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000983",
+    "name": "山西焦煤",
+    "ticker": "000983.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600348",
+    "name": "华阳股份",
+    "ticker": "600348.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：煤炭）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600938",
+    "name": "中国海油",
+    "ticker": "600938.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：石油石化）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002493",
+    "name": "荣盛石化",
+    "ticker": "002493.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：石油石化）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000301",
+    "name": "东方盛虹",
+    "ticker": "000301.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：石油石化）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601808",
+    "name": "中海油服",
+    "ticker": "601808.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：石油石化）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601233",
+    "name": "桐昆股份",
+    "ticker": "601233.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：石油石化）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600871",
+    "name": "石化油服",
+    "ticker": "600871.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：石油石化）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688825",
+    "name": "长鑫科技",
+    "ticker": "688825.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电子）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688981",
+    "name": "中芯国际",
+    "ticker": "688981.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电子）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688256",
+    "name": "寒武纪",
+    "ticker": "688256.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电子）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688041",
+    "name": "海光信息",
+    "ticker": "688041.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电子）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002371",
+    "name": "北方华创",
+    "ticker": "002371.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电子）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002384",
+    "name": "东山精密",
+    "ticker": "002384.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电子）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300308",
+    "name": "中际旭创",
+    "ticker": "300308.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300502",
+    "name": "新易盛",
+    "ticker": "300502.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601728",
+    "name": "中国电信",
+    "ticker": "601728.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601869",
+    "name": "长飞光纤",
+    "ticker": "601869.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300394",
+    "name": "天孚通信",
+    "ticker": "300394.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600487",
+    "name": "亨通光电",
+    "ticker": "600487.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000063",
+    "name": "中兴通讯",
+    "ticker": "000063.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002281",
+    "name": "光迅科技",
+    "ticker": "002281.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600050",
+    "name": "中国联通",
+    "ticker": "600050.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：通信）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002602",
+    "name": "世纪华通",
+    "ticker": "002602.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002027",
+    "name": "分众传媒",
+    "ticker": "002027.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300418",
+    "name": "昆仑万维",
+    "ticker": "300418.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300058",
+    "name": "蓝色光标",
+    "ticker": "300058.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002558",
+    "name": "巨人网络",
+    "ticker": "002558.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002555",
+    "name": "三七互娱",
+    "ticker": "002555.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300413",
+    "name": "芒果超媒",
+    "ticker": "300413.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002517",
+    "name": "恺英网络",
+    "ticker": "002517.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300251",
+    "name": "光线传媒",
+    "ticker": "300251.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：传媒）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "301666",
+    "name": "大普微-UW",
+    "ticker": "301666.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300033",
+    "name": "同花顺",
+    "ticker": "300033.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603019",
+    "name": "中科曙光",
+    "ticker": "603019.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688111",
+    "name": "金山办公",
+    "ticker": "688111.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000977",
+    "name": "浪潮信息",
+    "ticker": "000977.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000938",
+    "name": "紫光股份",
+    "ticker": "000938.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002230",
+    "name": "科大讯飞",
+    "ticker": "002230.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "301638",
+    "name": "南网数字",
+    "ticker": "301638.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601360",
+    "name": "三六零",
+    "ticker": "601360.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：计算机）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600673",
+    "name": "东阳光",
+    "ticker": "600673.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000833",
+    "name": "粤桂股份",
+    "ticker": "000833.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600458",
+    "name": "时代新材",
+    "ticker": "600458.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600770",
+    "name": "综艺股份",
+    "ticker": "600770.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600682",
+    "name": "南京新百",
+    "ticker": "600682.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000025",
+    "name": "特力Ａ",
+    "ticker": "000025.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000523",
+    "name": "红棉股份",
+    "ticker": "000523.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600881",
+    "name": "亚泰集团",
+    "ticker": "600881.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000753",
+    "name": "漳州发展",
+    "ticker": "000753.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：综合）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601398",
+    "name": "工商银行",
+    "ticker": "601398.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601939",
+    "name": "建设银行",
+    "ticker": "601939.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601288",
+    "name": "农业银行",
+    "ticker": "601288.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601988",
+    "name": "中国银行",
+    "ticker": "601988.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601328",
+    "name": "交通银行",
+    "ticker": "601328.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601658",
+    "name": "邮储银行",
+    "ticker": "601658.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601998",
+    "name": "中信银行",
+    "ticker": "601998.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601166",
+    "name": "兴业银行",
+    "ticker": "601166.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600000",
+    "name": "浦发银行",
+    "ticker": "600000.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：银行）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601628",
+    "name": "中国人寿",
+    "ticker": "601628.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601318",
+    "name": "中国平安",
+    "ticker": "601318.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601319",
+    "name": "中国人保",
+    "ticker": "601319.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601211",
+    "name": "国泰海通",
+    "ticker": "601211.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601601",
+    "name": "中国太保",
+    "ticker": "601601.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300059",
+    "name": "东方财富",
+    "ticker": "300059.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601066",
+    "name": "中信建投",
+    "ticker": "601066.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601336",
+    "name": "新华保险",
+    "ticker": "601336.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601688",
+    "name": "华泰证券",
+    "ticker": "601688.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：非银金融）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600048",
+    "name": "保利发展",
+    "ticker": "600048.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001979",
+    "name": "招商蛇口",
+    "ticker": "001979.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000002",
+    "name": "万科Ａ",
+    "ticker": "000002.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600663",
+    "name": "陆家嘴",
+    "ticker": "600663.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600895",
+    "name": "张江高科",
+    "ticker": "600895.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601155",
+    "name": "新城控股",
+    "ticker": "601155.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600246",
+    "name": "万通发展",
+    "ticker": "600246.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002244",
+    "name": "滨江集团",
+    "ticker": "002244.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600208",
+    "name": "衢州发展",
+    "ticker": "600208.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000029",
+    "name": "深深房Ａ",
+    "ticker": "000029.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：房地产）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601919",
+    "name": "中远海控",
+    "ticker": "601919.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601816",
+    "name": "京沪高铁",
+    "ticker": "601816.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601872",
+    "name": "招商轮船",
+    "ticker": "601872.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002352",
+    "name": "顺丰控股",
+    "ticker": "002352.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601111",
+    "name": "中国国航",
+    "ticker": "601111.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601006",
+    "name": "大秦铁路",
+    "ticker": "601006.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600029",
+    "name": "南方航空",
+    "ticker": "600029.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：交通运输）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "003816",
+    "name": "中国广核",
+    "ticker": "003816.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601985",
+    "name": "中国核电",
+    "ticker": "601985.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600930",
+    "name": "华电新能",
+    "ticker": "600930.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001248",
+    "name": "华润新能",
+    "ticker": "001248.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001289",
+    "name": "龙源电力",
+    "ticker": "001289.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600011",
+    "name": "华能国际",
+    "ticker": "600011.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600905",
+    "name": "三峡能源",
+    "ticker": "600905.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：公用事业）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601888",
+    "name": "中国中免",
+    "ticker": "601888.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600415",
+    "name": "小商品城",
+    "ticker": "600415.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601061",
+    "name": "中信金属",
+    "ticker": "601061.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601933",
+    "name": "永辉超市",
+    "ticker": "601933.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000564",
+    "name": "供销大集",
+    "ticker": "000564.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600655",
+    "name": "豫园股份",
+    "ticker": "600655.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600710",
+    "name": "苏美达",
+    "ticker": "600710.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000785",
+    "name": "居然智家",
+    "ticker": "000785.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603613",
+    "name": "国联股份",
+    "ticker": "603613.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600827",
+    "name": "百联股份",
+    "ticker": "600827.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：商贸零售）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300012",
+    "name": "华测检测",
+    "ticker": "300012.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600754",
+    "name": "锦江酒店",
+    "ticker": "600754.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300144",
+    "name": "宋城演艺",
+    "ticker": "300144.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601965",
+    "name": "中国汽研",
+    "ticker": "601965.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688757",
+    "name": "胜科纳米",
+    "ticker": "688757.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600258",
+    "name": "首旅酒店",
+    "ticker": "600258.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300192",
+    "name": "科德教育",
+    "ticker": "300192.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002607",
+    "name": "中公教育",
+    "ticker": "002607.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002967",
+    "name": "广电计量",
+    "ticker": "002967.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603099",
+    "name": "长白山",
+    "ticker": "603099.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：社会服务）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600519",
+    "name": "贵州茅台",
+    "ticker": "600519.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000858",
+    "name": "五粮液",
+    "ticker": "000858.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600887",
+    "name": "伊利股份",
+    "ticker": "600887.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600809",
+    "name": "山西汾酒",
+    "ticker": "600809.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000568",
+    "name": "泸州老窖",
+    "ticker": "000568.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "605499",
+    "name": "东鹏饮料",
+    "ticker": "605499.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000895",
+    "name": "双汇发展",
+    "ticker": "000895.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600600",
+    "name": "青岛啤酒",
+    "ticker": "600600.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002304",
+    "name": "洋河股份",
+    "ticker": "002304.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：食品饮料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603195",
+    "name": "公牛集团",
+    "ticker": "603195.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002078",
+    "name": "太阳纸业",
+    "ticker": "002078.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002831",
+    "name": "裕同科技",
+    "ticker": "002831.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603816",
+    "name": "顾家家居",
+    "ticker": "603816.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603899",
+    "name": "晨光股份",
+    "ticker": "603899.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001386",
+    "name": "马可波罗",
+    "ticker": "001386.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603833",
+    "name": "欧派家居",
+    "ticker": "603833.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603733",
+    "name": "仙鹤股份",
+    "ticker": "603733.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "003018",
+    "name": "金富科技",
+    "ticker": "003018.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "001221",
+    "name": "悍高集团",
+    "ticker": "001221.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：轻工制造）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300979",
+    "name": "华利集团",
+    "ticker": "300979.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600398",
+    "name": "海澜之家",
+    "ticker": "600398.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600612",
+    "name": "老凤祥",
+    "ticker": "600612.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002563",
+    "name": "森马服饰",
+    "ticker": "002563.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002832",
+    "name": "比音勒芬",
+    "ticker": "002832.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600916",
+    "name": "中国黄金",
+    "ticker": "600916.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601339",
+    "name": "百隆东方",
+    "ticker": "601339.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002867",
+    "name": "周大生",
+    "ticker": "002867.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：纺织服饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603256",
+    "name": "宏和科技",
+    "ticker": "603256.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "301526",
+    "name": "国际复材",
+    "ticker": "301526.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002080",
+    "name": "中材科技",
+    "ticker": "002080.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600585",
+    "name": "海螺水泥",
+    "ticker": "600585.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600801",
+    "name": "华新建材",
+    "ticker": "600801.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601112",
+    "name": "振石股份",
+    "ticker": "601112.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000786",
+    "name": "北新建材",
+    "ticker": "000786.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000877",
+    "name": "天山股份",
+    "ticker": "000877.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002271",
+    "name": "东方雨虹",
+    "ticker": "002271.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑材料）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601668",
+    "name": "中国建筑",
+    "ticker": "601668.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601868",
+    "name": "中国能建",
+    "ticker": "601868.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601390",
+    "name": "中国中铁",
+    "ticker": "601390.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601800",
+    "name": "中国交建",
+    "ticker": "601800.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601186",
+    "name": "中国铁建",
+    "ticker": "601186.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601669",
+    "name": "中国电建",
+    "ticker": "601669.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600039",
+    "name": "四川路桥",
+    "ticker": "600039.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601618",
+    "name": "中国中冶",
+    "ticker": "601618.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601117",
+    "name": "中国化学",
+    "ticker": "601117.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600667",
+    "name": "太极实业",
+    "ticker": "600667.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：建筑装饰）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600406",
+    "name": "国电南瑞",
+    "ticker": "600406.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300274",
+    "name": "阳光电源",
+    "ticker": "300274.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300014",
+    "name": "亿纬锂能",
+    "ticker": "300014.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601727",
+    "name": "上海电气",
+    "ticker": "601727.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002028",
+    "name": "思源电气",
+    "ticker": "002028.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "605117",
+    "name": "德业股份",
+    "ticker": "605117.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601012",
+    "name": "隆基绿能",
+    "ticker": "601012.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：电力设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603268",
+    "name": "松发股份",
+    "ticker": "603268.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "302132",
+    "name": "中航成飞",
+    "ticker": "302132.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600760",
+    "name": "中航沈飞",
+    "ticker": "600760.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600893",
+    "name": "航发动力",
+    "ticker": "600893.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601698",
+    "name": "中国卫通",
+    "ticker": "601698.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688002",
+    "name": "睿创微纳",
+    "ticker": "688002.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688818",
+    "name": "电科蓝天",
+    "ticker": "688818.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002179",
+    "name": "中航光电",
+    "ticker": "002179.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：国防军工）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688808",
+    "name": "联讯仪器",
+    "ticker": "688808.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688836",
+    "name": "宇树科技-W",
+    "ticker": "688836.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "301377",
+    "name": "鼎泰高科",
+    "ticker": "301377.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300124",
+    "name": "汇川技术",
+    "ticker": "300124.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601100",
+    "name": "恒立液压",
+    "ticker": "601100.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "301200",
+    "name": "大族数控",
+    "ticker": "301200.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002353",
+    "name": "杰瑞股份",
+    "ticker": "002353.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000988",
+    "name": "华工科技",
+    "ticker": "000988.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：机械设备）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600690",
+    "name": "海尔智家",
+    "ticker": "600690.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器／环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002429",
+    "name": "兆驰股份",
+    "ticker": "002429.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000921",
+    "name": "海信家电",
+    "ticker": "000921.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600060",
+    "name": "海信视像",
+    "ticker": "600060.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "002032",
+    "name": "苏泊尔",
+    "ticker": "002032.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600839",
+    "name": "四川长虹",
+    "ticker": "600839.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688169",
+    "name": "石头科技",
+    "ticker": "688169.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：家用电器）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300760",
+    "name": "迈瑞医疗",
+    "ticker": "300760.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：医药生物）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000538",
+    "name": "云南白药",
+    "ticker": "000538.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：医药生物）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "688271",
+    "name": "联影医疗",
+    "ticker": "688271.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：医药生物）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300015",
+    "name": "爱尔眼科",
+    "ticker": "300015.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：医药生物）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600436",
+    "name": "片仔癀",
+    "ticker": "600436.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：医药生物）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300896",
+    "name": "爱美客",
+    "ticker": "300896.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603605",
+    "name": "珀莱雅",
+    "ticker": "603605.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300888",
+    "name": "稳健医疗",
+    "ticker": "300888.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "920982",
+    "name": "锦波生物",
+    "ticker": "920982.BJ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300957",
+    "name": "贝泰妮",
+    "ticker": "300957.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "603983",
+    "name": "丸美生物",
+    "ticker": "603983.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600315",
+    "name": "上海家化",
+    "ticker": "600315.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "301371",
+    "name": "敷尔佳",
+    "ticker": "301371.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：美容护理）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000338",
+    "name": "潍柴动力",
+    "ticker": "000338.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：环保／汽车）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000807",
+    "name": "云铝股份",
+    "ticker": "000807.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "300285",
+    "name": "国瓷材料",
+    "ticker": "300285.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：环保）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "600104",
+    "name": "上汽集团",
+    "ticker": "600104.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：汽车）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601633",
+    "name": "长城汽车",
+    "ticker": "601633.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：汽车）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601127",
+    "name": "赛力斯",
+    "ticker": "601127.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：汽车）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601689",
+    "name": "拓普集团",
+    "ticker": "601689.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：汽车）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "000625",
+    "name": "长安汽车",
+    "ticker": "000625.SZ",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：汽车）"
+  },
+  {
+    "category": "申萬一級行業Top10",
+    "market": "CN",
+    "code": "601238",
+    "name": "广汽集团",
+    "ticker": "601238.SS",
+    "as_of": "2026-09-27",
+    "source": "百度搭子CSV（申萬：汽车）"
   }
 ]

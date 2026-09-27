@@ -140,6 +140,8 @@ def code_to_ticker(code: str, market: str = "CN") -> str:
     code = str(code).strip().zfill(6)
     if code == "399001":
         return "399001.SZ"
+    if code.startswith("92"):
+        return f"{code}.BJ"
     if code.startswith(("5", "6", "9")):
         return f"{code}.SS"
     if code.startswith(("0", "1", "2", "3")):
@@ -161,6 +163,10 @@ def stock_research_links(code: str, market: str = "CN", ticker: str = "") -> dic
         }
 
     cn_code = code.zfill(6)
+    if ticker.endswith(".BJ") or cn_code.startswith("92"):
+        return {
+            "tradingview_url": f"https://www.tradingview.com/search/?query={cn_code}",
+        }
     is_shanghai = ticker.endswith(".SS") or (
         not ticker.endswith(".SZ") and cn_code.startswith(("5", "6", "9"))
     )

@@ -7,6 +7,7 @@ def test_code_to_ticker():
     assert app_module.code_to_ticker("600519") == "600519.SS"
     assert app_module.code_to_ticker("688082") == "688082.SS"
     assert app_module.code_to_ticker("000333") == "000333.SZ"
+    assert app_module.code_to_ticker("920982") == "920982.BJ"
     assert app_module.code_to_ticker("399001") == "399001.SZ"
     assert app_module.code_to_ticker("01888", "HK") == "1888.HK"
     assert app_module.code_to_ticker("00006", "HK") == "0006.HK"
@@ -22,19 +23,23 @@ def test_stock_research_links_are_exchange_aware():
     assert app_module.stock_research_links("00006", "HK", "0006.HK") == {
         "tradingview_url": "https://www.tradingview.com/symbols/HKEX-6/?timeframe=1M",
     }
+    assert app_module.stock_research_links("920982", "CN", "920982.BJ") == {
+        "tradingview_url": "https://www.tradingview.com/search/?query=920982",
+    }
 
 
-def test_bundled_universe_has_two_markets_thirteen_categories_and_368_rows():
+def test_bundled_universe_has_two_markets_fourteen_categories_and_611_rows():
     rows = app_module._load_bundled_stocks()
-    assert len(rows) == 368
-    assert len({row["category"] for row in rows}) == 13
+    assert len(rows) == 611
+    assert len({row["category"] for row in rows}) == 14
     assert {row["market"] for row in rows} == {"CN", "HK"}
-    assert sum(row["market"] == "CN" for row in rows) == 230
+    assert sum(row["market"] == "CN" for row in rows) == 473
     assert sum(row["market"] == "HK" for row in rows) == 138
     assert sum(row["category"] == "創新藥" for row in rows) == 6
     assert sum(row["category"] == "創新藥產業鏈" for row in rows) == 8
     assert sum(row["category"] == "世界第一" for row in rows) == 50
     assert sum(row["category"] == "PCB產業鏈" for row in rows) == 5
+    assert sum(row["category"] == "申萬一級行業Top10" for row in rows) == 243
     assert {
         row["ticker"] for row in rows if row["category"] == "PCB產業鏈"
     } == {"002436.SZ", "601208.SS", "301217.SZ", "688300.SS", "002463.SZ"}
@@ -82,19 +87,20 @@ def test_stock_api_includes_research_links():
     stocks = response.get_json()["stocks"]
     assert stocks
     assert all("eastmoney_url" not in stock for stock in stocks)
-    assert all(stock["tradingview_url"].startswith("https://www.tradingview.com/symbols/") for stock in stocks)
-    assert all(stock["tradingview_url"].endswith("?timeframe=1M") for stock in stocks)
+    standard = [stock for stock in stocks if not stock["ticker"].endswith(".BJ")]
+    assert all(stock["tradingview_url"].startswith("https://www.tradingview.com/symbols/") for stock in standard)
+    assert all(stock["tradingview_url"].endswith("?timeframe=1M") for stock in standard)
 
 
 def test_database_seed_and_status():
     rows, source = app_module.load_stocks()
     assert source in {"google_sheet", "bundled_snapshot"}
-    assert len(rows) == 368
+    assert len(rows) == 611
     summary = app_module.database_summary()
     assert summary["connected"] is True
-    assert summary["stocks"] == 368
+    assert summary["stocks"] == 611
 
     client = app_module.app.test_client()
     response = client.get("/api/database-status")
     assert response.status_code == 200
-    assert response.get_json()["stocks"] == 368
+    assert response.get_json()["stocks"] == 611
