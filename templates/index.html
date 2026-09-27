@@ -47,7 +47,7 @@
     a { color: inherit; }
 
     .shell { width: min(1440px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 54px; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .topbar { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
     .brand { display: flex; align-items: center; gap: 15px; }
     .brand-mark {
       width: 54px; height: 54px; display: grid; place-items: center;
@@ -57,13 +57,25 @@
     .triangle { width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-bottom: 28px solid var(--blue); filter: drop-shadow(0 5px 8px rgba(59,130,246,.38)); }
     h1 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.45rem); letter-spacing: -.045em; }
     .eyebrow { margin: 3px 0 0; color: var(--blue-2); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    .links { display: flex; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
-    .link {
-      display: inline-flex; align-items: center; height: 40px; padding: 0 14px;
-      border: 1px solid var(--line); border-radius: 12px; color: #c8d8ef;
-      background: rgba(10, 24, 48, .7); text-decoration: none; font-size: .84rem; font-weight: 700;
+    .resource-menu { position: relative; flex: 0 0 auto; }
+    .resource-menu summary {
+      width: 44px; height: 44px; display: grid; place-items: center; list-style: none; cursor: pointer;
+      border: 1px solid var(--line); border-radius: 13px; background: rgba(10, 24, 48, .82);
+      transition: border-color .18s ease, background .18s ease;
     }
-    .link:hover { border-color: rgba(96,165,250,.6); color: #fff; }
+    .resource-menu summary::-webkit-details-marker { display: none; }
+    .resource-menu summary:hover, .resource-menu[open] summary { border-color: rgba(96,165,250,.65); background: #102449; }
+    .menu-icon { width: 19px; display: grid; gap: 4px; }
+    .menu-icon span { height: 2px; border-radius: 999px; background: #d8e7fb; }
+    .resource-links {
+      position: absolute; right: 0; top: calc(100% + 9px); z-index: 12; width: 210px; padding: 7px;
+      border: 1px solid var(--line); border-radius: 14px; background: #0a1830; box-shadow: 0 18px 44px rgba(0,0,0,.42);
+    }
+    .resource-link {
+      display: flex; align-items: center; min-height: 42px; padding: 0 12px; border-radius: 9px;
+      color: #c8d8ef; text-decoration: none; font-size: .82rem; font-weight: 750;
+    }
+    .resource-link:hover { color: #fff; background: rgba(59,130,246,.17); }
 
     .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 7px; margin-bottom: 14px; }
     .category {
@@ -146,9 +158,7 @@
     }
     @media (max-width: 680px) {
       .shell { width: min(100% - 18px, 1440px); padding-top: 18px; }
-      .topbar, .toolbar, footer { align-items: stretch; flex-direction: column; }
-      .links { justify-content: flex-start; }
-      .link { flex: 1; justify-content: center; }
+      .toolbar, footer { align-items: stretch; flex-direction: column; }
       .categories { gap: 6px; }
       .category { min-height: 38px; padding: 6px 9px; }
       .category-name { font-size: .74rem; }
@@ -166,11 +176,16 @@
         <div class="brand-mark" aria-hidden="true"><span class="triangle"></span></div>
         <div><h1>Chinareversals</h1><p class="eyebrow">China + Hong Kong signals</p></div>
       </div>
-      <nav class="links" aria-label="Project links">
-        <a class="link" href="{{ production_url }}" target="_blank" rel="noopener">Production</a>
-        <a class="link" href="{{ google_sheet_url }}" target="_blank" rel="noopener">Google Sheet</a>
-        <a class="link" href="{{ github_repo_url }}" target="_blank" rel="noopener">GitHub</a>
-      </nav>
+      <details class="resource-menu" id="resourceMenu">
+        <summary aria-label="Open project links" title="Project links">
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </summary>
+        <nav class="resource-links" aria-label="Project links">
+          <a class="resource-link" href="{{ production_url }}" target="_blank" rel="noopener">Production</a>
+          <a class="resource-link" href="{{ google_sheet_url }}" target="_blank" rel="noopener">Google Sheet</a>
+          <a class="resource-link" href="{{ github_repo_url }}" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </details>
     </header>
 
     <section class="categories" aria-label="選股條件">
@@ -372,7 +387,16 @@
     refreshButton.addEventListener('click', loadPrices);
     document.querySelector('#closeDrawer').addEventListener('click', closeDrawer);
     document.querySelector('#drawerBackdrop').addEventListener('click', event => { if (event.target.id === 'drawerBackdrop') closeDrawer(); });
-    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDrawer(); });
+    document.addEventListener('click', event => {
+      const menu = document.querySelector('#resourceMenu');
+      if (!menu.contains(event.target)) menu.removeAttribute('open');
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        closeDrawer();
+        document.querySelector('#resourceMenu').removeAttribute('open');
+      }
+    });
     document.querySelector('#exportButton').addEventListener('click', () => {
       const headers = ['category','market','code','name','ticker','price','days_since_reversal','gain_since_reversal_pct','rsi','1d_pct','3d_pct','5d_pct','20d_pct','60d_pct'];
       const csvRows = filteredRows().map(row => [row.category,row.market,row.code,row.name,row.ticker,row.price,row.dg,row.gg,row.rsi,row.d1,row.d3,row.d5,row.d20,row.d60]);
