@@ -74,10 +74,12 @@ def test_health_and_home():
     assert home.status_code == 200
     assert b"Chinareversals" in home.data
     assert b'href="https://chinareversals-production.up.railway.app"' in home.data
-    assert b">Production</a>" in home.data
+    assert b"PRODUCTION PUBLIC DOMAIN" in home.data
     assert b'class="resource-menu"' in home.data
     assert b'class="menu-icon"' in home.data
     assert b'class="links"' not in home.data
+    assert b"Remarks &amp; Links" in home.data
+    assert home.data.count(b'class="remark-card"') == 3
     assert b"Spot the turn." not in home.data
     assert b'class="hero"' not in home.data
     assert b"View on TradingView" in home.data

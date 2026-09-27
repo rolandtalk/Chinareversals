@@ -57,25 +57,44 @@
     .triangle { width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-bottom: 28px solid var(--blue); filter: drop-shadow(0 5px 8px rgba(59,130,246,.38)); }
     h1 { margin: 0; font-size: clamp(1.65rem, 4vw, 2.45rem); letter-spacing: -.045em; }
     .eyebrow { margin: 3px 0 0; color: var(--blue-2); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    .resource-menu { position: relative; flex: 0 0 auto; }
-    .resource-menu summary {
+    .resource-menu {
       width: 44px; height: 44px; display: grid; place-items: center; list-style: none; cursor: pointer;
       border: 1px solid var(--line); border-radius: 13px; background: rgba(10, 24, 48, .82);
-      transition: border-color .18s ease, background .18s ease;
+      color: inherit; flex: 0 0 auto; transition: border-color .18s ease, background .18s ease;
     }
-    .resource-menu summary::-webkit-details-marker { display: none; }
-    .resource-menu summary:hover, .resource-menu[open] summary { border-color: rgba(96,165,250,.65); background: #102449; }
+    .resource-menu:hover { border-color: rgba(96,165,250,.65); background: #102449; }
     .menu-icon { width: 19px; display: grid; gap: 4px; }
     .menu-icon span { height: 2px; border-radius: 999px; background: #d8e7fb; }
-    .resource-links {
-      position: absolute; right: 0; top: calc(100% + 9px); z-index: 12; width: 210px; padding: 7px;
-      border: 1px solid var(--line); border-radius: 14px; background: #0a1830; box-shadow: 0 18px 44px rgba(0,0,0,.42);
+    .remarks-backdrop {
+      position: fixed; inset: 0; z-index: 35; display: none; align-items: center; justify-content: center; padding: 22px;
+      background: rgba(1,8,22,.76); backdrop-filter: blur(7px);
     }
-    .resource-link {
-      display: flex; align-items: center; min-height: 42px; padding: 0 12px; border-radius: 9px;
-      color: #c8d8ef; text-decoration: none; font-size: .82rem; font-weight: 750;
+    .remarks-backdrop.open { display: flex; }
+    .remarks-panel {
+      width: min(780px, 100%); max-height: min(82vh, 760px); overflow: auto; padding: 28px;
+      border: 1px solid rgba(96,165,250,.25); border-radius: 26px;
+      background: linear-gradient(145deg, #15264d, #101d3d); box-shadow: 0 30px 90px rgba(0,0,0,.56);
     }
-    .resource-link:hover { color: #fff; background: rgba(59,130,246,.17); }
+    .remarks-head { display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+    .remarks-head h2 { margin: 0; color: var(--cyan); font-size: clamp(1.45rem, 4vw, 2rem); letter-spacing: -.025em; }
+    .remarks-copy { margin: 15px 0 24px; color: var(--muted); line-height: 1.55; }
+    .remarks-close { width: 40px; height: 40px; border: 0; color: #a9b9d2; background: transparent; cursor: pointer; font-size: 2rem; line-height: 1; }
+    .remarks-close:hover { color: #fff; }
+    .remark-list { display: grid; gap: 14px; }
+    .remark-card {
+      min-width: 0; display: grid; grid-template-columns: 42px minmax(0,1fr) 26px; align-items: center; gap: 14px;
+      padding: 16px; border: 1px solid var(--line); border-radius: 16px; color: inherit;
+      background: rgba(4,14,34,.35); text-decoration: none; transition: border-color .18s ease, transform .18s ease;
+    }
+    .remark-card:hover { border-color: rgba(56,189,248,.55); transform: translateY(-1px); }
+    .remark-number {
+      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px;
+      color: #041424; background: linear-gradient(145deg, #22d3ee, #2dd4bf); font-size: 1.05rem; font-weight: 900;
+    }
+    .remark-type { display: block; margin-bottom: 4px; color: #22d3ee; font-size: .74rem; font-weight: 900; letter-spacing: .045em; }
+    .remark-title { display: block; overflow: hidden; color: #f3f7ff; font-size: .96rem; font-weight: 800; text-overflow: ellipsis; white-space: nowrap; }
+    .remark-url { display: block; overflow: hidden; margin-top: 3px; color: #8298ba; font-size: .72rem; text-overflow: ellipsis; white-space: nowrap; }
+    .external-icon { color: #9eb1ce; font-size: 1.2rem; }
 
     .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 7px; margin-bottom: 14px; }
     .category {
@@ -162,6 +181,10 @@
       .categories { gap: 6px; }
       .category { min-height: 38px; padding: 6px 9px; }
       .category-name { font-size: .74rem; }
+      .remarks-backdrop { padding: 12px; }
+      .remarks-panel { padding: 22px 18px; border-radius: 23px; }
+      .remark-card { grid-template-columns: 38px minmax(0,1fr) 22px; gap: 11px; padding: 13px; }
+      .remark-number { width: 38px; height: 38px; }
       .actions { width: 100%; }
       .button { flex: 1; }
       .search { max-width: none; }
@@ -176,16 +199,9 @@
         <div class="brand-mark" aria-hidden="true"><span class="triangle"></span></div>
         <div><h1>Chinareversals</h1><p class="eyebrow">China + Hong Kong signals</p></div>
       </div>
-      <details class="resource-menu" id="resourceMenu">
-        <summary aria-label="Open project links" title="Project links">
-          <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        </summary>
-        <nav class="resource-links" aria-label="Project links">
-          <a class="resource-link" href="{{ production_url }}" target="_blank" rel="noopener">Production</a>
-          <a class="resource-link" href="{{ google_sheet_url }}" target="_blank" rel="noopener">Google Sheet</a>
-          <a class="resource-link" href="{{ github_repo_url }}" target="_blank" rel="noopener">GitHub</a>
-        </nav>
-      </details>
+      <button class="resource-menu" id="resourceMenu" aria-label="Open remarks and links" title="Remarks & Links">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
     </header>
 
     <section class="categories" aria-label="選股條件">
@@ -227,6 +243,33 @@
       <span>Updated automatically after market close. Research tool only.</span>
     </footer>
   </main>
+
+  <div id="remarksBackdrop" class="remarks-backdrop" role="dialog" aria-modal="true" aria-labelledby="remarksTitle">
+    <section class="remarks-panel">
+      <div class="remarks-head">
+        <h2 id="remarksTitle">Remarks &amp; Links</h2>
+        <button id="closeRemarks" class="remarks-close" aria-label="Close remarks and links">×</button>
+      </div>
+      <p class="remarks-copy">Quick access to this app's production domain, source repository, and data file.</p>
+      <nav class="remark-list" aria-label="Project resources">
+        <a class="remark-card" href="{{ production_url }}" target="_blank" rel="noopener">
+          <span class="remark-number">1</span>
+          <span><span class="remark-type">PRODUCTION PUBLIC DOMAIN</span><span class="remark-title">chinareversals-production.up.railway.app</span><span class="remark-url">{{ production_url }}</span></span>
+          <span class="external-icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="remark-card" href="{{ github_repo_url }}" target="_blank" rel="noopener">
+          <span class="remark-number">2</span>
+          <span><span class="remark-type">GITHUB REPOSITORY</span><span class="remark-title">rolandtalk/Chinareversals</span><span class="remark-url">{{ github_repo_url }}</span></span>
+          <span class="external-icon" aria-hidden="true">↗</span>
+        </a>
+        <a class="remark-card" href="{{ google_sheet_url }}" target="_blank" rel="noopener">
+          <span class="remark-number">3</span>
+          <span><span class="remark-type">GOOGLE SHEET</span><span class="remark-title">CNreversals Stock Universe</span><span class="remark-url">{{ google_sheet_url }}</span></span>
+          <span class="external-icon" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </section>
+  </div>
 
   <div id="drawerBackdrop" class="drawer-backdrop" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
     <aside class="drawer">
@@ -387,14 +430,15 @@
     refreshButton.addEventListener('click', loadPrices);
     document.querySelector('#closeDrawer').addEventListener('click', closeDrawer);
     document.querySelector('#drawerBackdrop').addEventListener('click', event => { if (event.target.id === 'drawerBackdrop') closeDrawer(); });
-    document.addEventListener('click', event => {
-      const menu = document.querySelector('#resourceMenu');
-      if (!menu.contains(event.target)) menu.removeAttribute('open');
-    });
+    function openRemarks() { document.querySelector('#remarksBackdrop').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeRemarks() { document.querySelector('#remarksBackdrop').classList.remove('open'); document.body.style.overflow = ''; }
+    document.querySelector('#resourceMenu').addEventListener('click', openRemarks);
+    document.querySelector('#closeRemarks').addEventListener('click', closeRemarks);
+    document.querySelector('#remarksBackdrop').addEventListener('click', event => { if (event.target.id === 'remarksBackdrop') closeRemarks(); });
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape') {
         closeDrawer();
-        document.querySelector('#resourceMenu').removeAttribute('open');
+        closeRemarks();
       }
     });
     document.querySelector('#exportButton').addEventListener('click', () => {
