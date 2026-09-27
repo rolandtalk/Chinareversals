@@ -75,6 +75,8 @@ def test_health_and_home():
     assert b"Chinareversals" in home.data
     assert b'href="https://chinareversals-production.up.railway.app"' in home.data
     assert b">Production</a>" in home.data
+    assert b"Spot the turn." not in home.data
+    assert b'class="hero"' not in home.data
     assert b"View on TradingView" in home.data
     assert b"View on Eastmoney" not in home.data
     assert b'data-sort="category"' not in home.data
