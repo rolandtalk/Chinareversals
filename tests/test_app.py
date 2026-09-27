@@ -28,18 +28,21 @@ def test_stock_research_links_are_exchange_aware():
     }
 
 
-def test_bundled_universe_has_two_markets_fourteen_categories_and_611_rows():
+def test_bundled_universe_has_two_markets_fifteen_categories_and_615_rows():
     rows = app_module._load_bundled_stocks()
-    assert len(rows) == 611
-    assert len({row["category"] for row in rows}) == 14
+    assert len(rows) == 615
+    assert len({row["category"] for row in rows}) == 15
     assert {row["market"] for row in rows} == {"CN", "HK"}
-    assert sum(row["market"] == "CN" for row in rows) == 473
-    assert sum(row["market"] == "HK" for row in rows) == 138
+    assert sum(row["market"] == "CN" for row in rows) == 474
+    assert sum(row["market"] == "HK" for row in rows) == 141
     assert sum(row["category"] == "創新藥" for row in rows) == 6
     assert sum(row["category"] == "創新藥產業鏈" for row in rows) == 8
     assert sum(row["category"] == "世界第一" for row in rows) == 50
     assert sum(row["category"] == "PCB產業鏈" for row in rows) == 5
     assert sum(row["category"] == "申萬一級行業Top10" for row in rows) == 243
+    assert {
+        row["ticker"] for row in rows if row["category"] == "電力可比公司"
+    } == {"2380.HK", "0836.HK", "0991.HK", "600236.SS"}
     assert {
         row["ticker"] for row in rows if row["category"] == "PCB產業鏈"
     } == {"002436.SZ", "601208.SS", "301217.SZ", "688300.SS", "002463.SZ"}
@@ -104,15 +107,15 @@ def test_stock_api_includes_research_links():
 def test_database_seed_and_status():
     rows, source = app_module.load_stocks()
     assert source in {"database", "google_sheet", "bundled_snapshot"}
-    assert len(rows) == 611
+    assert len(rows) == 615
     summary = app_module.database_summary()
     assert summary["connected"] is True
-    assert summary["stocks"] == 611
+    assert summary["stocks"] == 615
 
     client = app_module.app.test_client()
     response = client.get("/api/database-status")
     assert response.status_code == 200
-    assert response.get_json()["stocks"] == 611
+    assert response.get_json()["stocks"] == 615
 
 
 def test_data_api_reads_completed_database_snapshot(monkeypatch):
@@ -126,5 +129,5 @@ def test_data_api_reads_completed_database_snapshot(monkeypatch):
     assert response.status_code == 200
     payload = response.get_json()
     assert payload["cached"] is True
-    assert len(payload["rows"]) == 611
+    assert len(payload["rows"]) == 615
     assert all("d60" in row for row in payload["rows"])

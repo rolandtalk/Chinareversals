@@ -5497,5 +5497,41 @@
     "ticker": "601238.SS",
     "as_of": "2026-09-27",
     "source": "百度搭子CSV（申萬：汽车）"
+  },
+  {
+    "category": "電力可比公司",
+    "market": "HK",
+    "code": "02380",
+    "name": "中国电力",
+    "ticker": "2380.HK",
+    "as_of": "2026-09-28",
+    "source": "使用者截圖 18369.jpg"
+  },
+  {
+    "category": "電力可比公司",
+    "market": "HK",
+    "code": "00836",
+    "name": "华润电力",
+    "ticker": "0836.HK",
+    "as_of": "2026-09-28",
+    "source": "使用者截圖 18369.jpg"
+  },
+  {
+    "category": "電力可比公司",
+    "market": "HK",
+    "code": "00991",
+    "name": "大唐发电",
+    "ticker": "0991.HK",
+    "as_of": "2026-09-28",
+    "source": "使用者截圖 18369.jpg"
+  },
+  {
+    "category": "電力可比公司",
+    "market": "CN",
+    "code": "600236",
+    "name": "桂冠电力",
+    "ticker": "600236.SS",
+    "as_of": "2026-09-28",
+    "source": "使用者截圖 18369.jpg"
   }
 ]

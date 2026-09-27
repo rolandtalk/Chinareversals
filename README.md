@@ -4,7 +4,7 @@ China and Hong Kong MA3 reversal scanner, adapted from [reversal_list_CursorAI](
 
 **Live app:** [chinareversals-production.up.railway.app](https://chinareversals-production.up.railway.app)
 
-The app tracks 611 selections—473 mainland and 138 Hong Kong listings. This includes 306 names across the nine `鉅亨網 AI 股市贏家` categories captured on 2026-09-26, 14 user-selected innovative-drug and supply-chain companies, 48 additional A-share names from the world-leading and PCB screenshots, and 243 unique additions from the `A股申万一级行业前十大市值公司及60日涨跌幅` CSV added on 2026-09-27. Existing selections were preserved instead of duplicated. It preserves the source market, original names and stock codes, maps each listing to its market ticker, and calculates:
+The app tracks 615 selections—474 mainland and 141 Hong Kong listings. This includes 306 names across the nine `鉅亨網 AI 股市贏家` categories captured on 2026-09-26, 14 user-selected innovative-drug and supply-chain companies, 48 additional A-share names from the world-leading and PCB screenshots, 243 unique additions from the `A股申万一级行业前十大市值公司及60日涨跌幅` CSV added on 2026-09-27, and four newly added power comparables from the 2026-09-28 screenshot. Existing selections were preserved instead of duplicated. It preserves the source market, original names and stock codes, maps each listing to its market ticker, and calculates:
 
 - latest close and RSI(14)
 - days since the latest below-MA3 reversal low (DG)
@@ -64,7 +64,7 @@ Open <http://127.0.0.1:5000>.
 | `DB_MAX_OVERFLOW` | Temporary connections above the pool | `5` |
 | `DB_POOL_TIMEOUT` | Seconds to wait for a connection | `10` |
 
-The cron refreshes the universe from the public Google Sheet. If it is unavailable, the scan uses the committed 611-row snapshot in `data/stock_universe.json`.
+The cron refreshes the universe from the public Google Sheet. If it is unavailable, the scan uses the committed 615-row snapshot in `data/stock_universe.json`.
 
 ## Data note
 
