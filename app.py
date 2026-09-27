@@ -3,20 +3,21 @@
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 import json
 import os
 from pathlib import Path
 import threading
-import time
 import urllib.parse
 import urllib.request
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 import pandas as pd
 import yfinance as yf
-from sqlalchemy import Boolean, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, create_engine, func, select
+from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Index, Integer, String, Text, UniqueConstraint, and_, create_engine, func, inspect, select, text
+from sqlalchemy.dialects.postgresql import insert as postgresql_insert
+from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship, sessionmaker
 
 
@@ -37,7 +38,6 @@ GOOGLE_SHEET_URL = (
     f"https://docs.google.com/spreadsheets/d/{GOOGLE_SHEET_ID}/edit"
 )
 SOURCE_SHEET_NAME = os.getenv("SOURCE_SHEET_NAME", "股票清單")
-CACHE_TTL = int(os.getenv("CACHE_TTL", "900"))
 BATCH_SIZE = int(os.getenv("BATCH_SIZE", "45"))
 
 RAW_DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'chinareversals.db'}")
@@ -75,7 +75,7 @@ class ScanRun(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     started_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc), index=True)
-    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    completed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True, index=True)
     source_mode: Mapped[str] = mapped_column(String(40), default="bundled_snapshot")
     total_count: Mapped[int] = mapped_column(Integer, default=0)
     available_count: Mapped[int] = mapped_column(Integer, default=0)
@@ -98,18 +98,41 @@ class ScanResult(Base):
     d3: Mapped[float | None] = mapped_column(Float, nullable=True)
     d5: Mapped[float | None] = mapped_column(Float, nullable=True)
     d20: Mapped[float | None] = mapped_column(Float, nullable=True)
+    d60: Mapped[float | None] = mapped_column(Float, nullable=True)
     reversal_date: Mapped[str | None] = mapped_column(String(16), nullable=True)
     run: Mapped[ScanRun] = relationship(back_populates="results")
     stock: Mapped[Stock] = relationship(back_populates="results")
 
 
-ENGINE = create_engine(DATABASE_URL, pool_pre_ping=True)
+class DailyPrice(Base):
+    __tablename__ = "daily_prices"
+    __table_args__ = (
+        UniqueConstraint("stock_id", "trading_date", name="uq_daily_price_stock_date"),
+        Index("ix_daily_prices_stock_date", "stock_id", "trading_date"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    stock_id: Mapped[int] = mapped_column(ForeignKey("stocks.id", ondelete="CASCADE"), index=True)
+    trading_date: Mapped[date] = mapped_column(Date)
+    close: Mapped[float] = mapped_column(Float)
+    ma3: Mapped[float | None] = mapped_column(Float, nullable=True)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
+    )
+
+
+_ENGINE_OPTIONS: dict[str, object] = {"pool_pre_ping": True}
+if not DATABASE_URL.startswith("sqlite"):
+    _ENGINE_OPTIONS.update(
+        pool_size=int(os.getenv("DB_POOL_SIZE", "5")),
+        max_overflow=int(os.getenv("DB_MAX_OVERFLOW", "5")),
+        pool_timeout=int(os.getenv("DB_POOL_TIMEOUT", "10")),
+        pool_recycle=300,
+    )
+ENGINE = create_engine(DATABASE_URL, **_ENGINE_OPTIONS)
 SessionLocal = sessionmaker(bind=ENGINE, expire_on_commit=False)
 _DB_LOCK = threading.Lock()
 _DB_READY = False
-
-_CACHE: dict[str, object] = {"timestamp": 0.0, "rows": None, "run_id": None, "source": None}
-
 
 def ensure_database() -> bool:
     global _DB_READY
@@ -120,6 +143,17 @@ def ensure_database() -> bool:
             return True
         try:
             Base.metadata.create_all(ENGINE)
+            columns = {column["name"] for column in inspect(ENGINE).get_columns("scan_results")}
+            if "d60" not in columns:
+                with ENGINE.begin() as connection:
+                    connection.execute(text("ALTER TABLE scan_results ADD COLUMN d60 FLOAT"))
+            with ENGINE.begin() as connection:
+                connection.execute(
+                    text(
+                        "CREATE INDEX IF NOT EXISTS ix_scan_results_stock_observed "
+                        "ON scan_results (stock_id, observed_at)"
+                    )
+                )
             _DB_READY = True
         except Exception as exc:
             app.logger.warning("Database initialization failed: %s", exc)
@@ -243,37 +277,55 @@ def _sync_stocks_to_database(rows: list[dict]) -> list[dict] | None:
             stock.source = row.get("source", "")
             stock.active = True
         session.commit()
-        active = session.scalars(select(Stock).where(Stock.active.is_(True)).order_by(Stock.id)).all()
-        return [
-            {
-                "category": stock.category,
-                "market": stock.market,
-                "code": stock.code,
-                "name": stock.name,
-                "ticker": stock.ticker,
-                "as_of": stock.as_of,
-                "source": stock.source,
-            }
-            for stock in active
-        ]
+        active = session.scalars(
+            select(Stock).where(Stock.active.is_(True)).order_by(Stock.id)
+        ).all()
+        return [_stock_to_dict(stock) for stock in active]
+
+
+def _stock_to_dict(stock: Stock) -> dict:
+    row = {
+        "category": stock.category,
+        "market": stock.market,
+        "code": stock.code,
+        "name": stock.name,
+        "ticker": stock.ticker,
+        "as_of": stock.as_of,
+        "source": stock.source,
+    }
+    row.update(stock_research_links(stock.code, stock.market, stock.ticker))
+    return row
+
+
+def _load_database_stocks() -> list[dict]:
+    if not ensure_database():
+        return []
+    with SessionLocal() as session:
+        stocks = session.scalars(
+            select(Stock).where(Stock.active.is_(True)).order_by(Stock.id)
+        ).all()
+        return [_stock_to_dict(stock) for stock in stocks]
+
+
+def sync_stocks_from_source() -> tuple[list[dict], str]:
+    """Refresh the database universe. Intended for the scheduled close scan."""
+    try:
+        rows, source_mode = _load_public_sheet(), "google_sheet"
+    except Exception as exc:
+        app.logger.warning("Google Sheet unavailable; using bundled snapshot: %s", exc)
+        rows, source_mode = _load_bundled_stocks(), "bundled_snapshot"
+    database_rows = _sync_stocks_to_database(rows)
+    if database_rows is None:
+        raise RuntimeError("Database unavailable while syncing stock universe")
+    return database_rows, source_mode
 
 
 def load_stocks() -> tuple[list[dict], str]:
-    try:
-        rows, source_mode = _load_public_sheet(), "google_sheet"
-    except Exception:
-        rows, source_mode = _load_bundled_stocks(), "bundled_snapshot"
-    database_rows = _sync_stocks_to_database(rows)
-    stocks = database_rows or rows
-    return [
-        {
-            **stock,
-            **stock_research_links(
-                stock["code"], stock.get("market", "CN"), stock.get("ticker", "")
-            ),
-        }
-        for stock in stocks
-    ], source_mode
+    """Load the universe from SQL; seed it only when the database is empty."""
+    database_rows = _load_database_stocks()
+    if database_rows:
+        return database_rows, "database"
+    return sync_stocks_from_source()
 
 
 def calculate_rsi(close: pd.Series, period: int = 14) -> pd.Series:
@@ -351,7 +403,22 @@ def _extract_ticker_frame(data: pd.DataFrame, ticker: str, ticker_count: int):
     return data[ticker].copy()
 
 
-def _download_chunk(tickers: list[str]) -> dict[str, dict | None]:
+def _price_history(frame: pd.DataFrame | None) -> list[dict]:
+    if frame is None or frame.empty or "Close" not in frame:
+        return []
+    close = frame["Close"].dropna()
+    ma3 = close.rolling(3).mean()
+    return [
+        {
+            "trading_date": pd.Timestamp(index).date(),
+            "close": round(float(value), 4),
+            "ma3": None if pd.isna(ma3.loc[index]) else round(float(ma3.loc[index]), 4),
+        }
+        for index, value in close.items()
+    ]
+
+
+def _download_chunk(tickers: list[str]) -> dict[str, dict]:
     try:
         data = yf.download(
             tickers,
@@ -364,28 +431,32 @@ def _download_chunk(tickers: list[str]) -> dict[str, dict | None]:
             timeout=20,
         )
     except Exception:
-        return {ticker: None for ticker in tickers}
+        return {ticker: {"metrics": None, "prices": []} for ticker in tickers}
 
-    return {
-        ticker: calculate_metrics(_extract_ticker_frame(data, ticker, len(tickers)))
-        for ticker in tickers
-    }
+    result = {}
+    for ticker in tickers:
+        frame = _extract_ticker_frame(data, ticker, len(tickers))
+        result[ticker] = {
+            "metrics": calculate_metrics(frame),
+            "prices": _price_history(frame),
+        }
+    return result
 
 
-def scan_stocks(stocks: list[dict]) -> list[dict]:
+def scan_stocks_with_prices(stocks: list[dict]) -> tuple[list[dict], dict[str, list[dict]]]:
     tickers = list(dict.fromkeys(stock["ticker"] for stock in stocks))
     chunks = [tickers[i : i + BATCH_SIZE] for i in range(0, len(tickers), BATCH_SIZE)]
-    metrics: dict[str, dict | None] = {}
+    payloads: dict[str, dict] = {}
     with ThreadPoolExecutor(max_workers=min(4, len(chunks) or 1)) as pool:
         futures = [pool.submit(_download_chunk, chunk) for chunk in chunks]
         for future in as_completed(futures):
-            metrics.update(future.result())
+            payloads.update(future.result())
 
     rows = []
     for stock in stocks:
         row = dict(stock)
         row.update(
-            metrics.get(stock["ticker"])
+            payloads.get(stock["ticker"], {}).get("metrics")
             or {
                 "price": None,
                 "dg": None,
@@ -401,10 +472,56 @@ def scan_stocks(stocks: list[dict]) -> list[dict]:
         )
         rows.append(row)
     rows.sort(key=lambda row: (row["dg"] is None, row["dg"] or 0, row["code"]))
+    histories = {
+        ticker: payload.get("prices", []) for ticker, payload in payloads.items()
+    }
+    return rows, histories
+
+
+def scan_stocks(stocks: list[dict]) -> list[dict]:
+    rows, _ = scan_stocks_with_prices(stocks)
     return rows
 
 
-def persist_scan(rows: list[dict], source_mode: str) -> int | None:
+def _upsert_daily_prices(
+    session, stocks: dict[str, Stock], histories: dict[str, list[dict]]
+) -> None:
+    now = datetime.now(timezone.utc)
+    records = [
+        {
+            "stock_id": stocks[ticker].id,
+            "trading_date": item["trading_date"],
+            "close": item["close"],
+            "ma3": item["ma3"],
+            "updated_at": now,
+        }
+        for ticker, prices in histories.items()
+        if ticker in stocks
+        for item in prices
+    ]
+    if not records:
+        return
+    dialect_insert = (
+        postgresql_insert if ENGINE.dialect.name == "postgresql" else sqlite_insert
+    )
+    for offset in range(0, len(records), 1000):
+        statement = dialect_insert(DailyPrice).values(records[offset : offset + 1000])
+        statement = statement.on_conflict_do_update(
+            index_elements=[DailyPrice.stock_id, DailyPrice.trading_date],
+            set_={
+                "close": statement.excluded.close,
+                "ma3": statement.excluded.ma3,
+                "updated_at": statement.excluded.updated_at,
+            },
+        )
+        session.execute(statement)
+
+
+def persist_scan(
+    rows: list[dict],
+    source_mode: str,
+    histories: dict[str, list[dict]] | None = None,
+) -> int | None:
     if not ensure_database():
         return None
     with SessionLocal() as session:
@@ -434,12 +551,63 @@ def persist_scan(rows: list[dict], source_mode: str) -> int | None:
                     d3=row.get("d3"),
                     d5=row.get("d5"),
                     d20=row.get("d20"),
+                    d60=row.get("d60"),
                     reversal_date=row.get("reversal_date"),
                 )
             )
+        _upsert_daily_prices(session, stocks, histories or {})
         run.completed_at = datetime.now(timezone.utc)
         session.commit()
         return run.id
+
+
+def load_latest_scan() -> dict:
+    """Return the latest completed SQL snapshot without contacting market APIs."""
+    if not ensure_database():
+        raise RuntimeError("Database unavailable")
+    with SessionLocal() as session:
+        run = session.scalar(
+            select(ScanRun)
+            .where(ScanRun.completed_at.is_not(None))
+            .order_by(ScanRun.completed_at.desc(), ScanRun.id.desc())
+            .limit(1)
+        )
+        condition = (
+            and_(ScanResult.stock_id == Stock.id, ScanResult.run_id == run.id)
+            if run
+            else and_(ScanResult.stock_id == Stock.id, ScanResult.run_id == -1)
+        )
+        records = session.execute(
+            select(Stock, ScanResult)
+            .outerjoin(ScanResult, condition)
+            .where(Stock.active.is_(True))
+            .order_by(Stock.id)
+        ).all()
+        rows = []
+        for stock, result in records:
+            row = _stock_to_dict(stock)
+            row.update(
+                {
+                    "price": result.price if result else None,
+                    "dg": result.dg if result else None,
+                    "gg": result.gg if result else None,
+                    "rsi": result.rsi if result else None,
+                    "d1": result.d1 if result else None,
+                    "d3": result.d3 if result else None,
+                    "d5": result.d5 if result else None,
+                    "d20": result.d20 if result else None,
+                    "d60": result.d60 if result else None,
+                    "reversal_date": result.reversal_date if result else None,
+                }
+            )
+            rows.append(row)
+        rows.sort(key=lambda row: (row["dg"] is None, row["dg"] or 0, row["code"]))
+        return {
+            "rows": rows,
+            "run_id": run.id if run else None,
+            "source": run.source_mode if run else "database_pending",
+            "generated_at": run.completed_at.isoformat() if run and run.completed_at else None,
+        }
 
 
 def database_summary() -> dict:
@@ -449,6 +617,7 @@ def database_summary() -> dict:
         stock_count = session.scalar(select(func.count()).select_from(Stock).where(Stock.active.is_(True))) or 0
         run_count = session.scalar(select(func.count()).select_from(ScanRun)) or 0
         result_count = session.scalar(select(func.count()).select_from(ScanResult)) or 0
+        price_count = session.scalar(select(func.count()).select_from(DailyPrice)) or 0
         latest = session.scalar(select(ScanRun).order_by(ScanRun.id.desc()).limit(1))
         return {
             "connected": True,
@@ -456,6 +625,7 @@ def database_summary() -> dict:
             "stocks": stock_count,
             "scan_runs": run_count,
             "scan_results": result_count,
+            "daily_prices": price_count,
             "latest_run_id": latest.id if latest else None,
             "latest_completed_at": latest.completed_at.isoformat() if latest and latest.completed_at else None,
         }
@@ -492,33 +662,12 @@ def stock_universe():
 
 @app.get("/api/data")
 def data():
-    global _CACHE
-    force = request.args.get("refresh", "").lower() in {"1", "true", "yes"}
-    now = time.time()
-    if not force and _CACHE["rows"] and now - float(_CACHE["timestamp"]) < CACHE_TTL:
-        return jsonify(
-            {
-                "rows": _CACHE["rows"],
-                "cached": True,
-                "run_id": _CACHE["run_id"],
-                "source": _CACHE["source"],
-                "generated_at": datetime.fromtimestamp(float(_CACHE["timestamp"])).isoformat(),
-            }
-        )
-
-    stocks, source_mode = load_stocks()
-    rows = scan_stocks(stocks)
-    run_id = persist_scan(rows, source_mode)
-    _CACHE = {"timestamp": now, "rows": rows, "run_id": run_id, "source": source_mode}
-    return jsonify(
-        {
-            "rows": rows,
-            "cached": False,
-            "source": source_mode,
-            "run_id": run_id,
-            "generated_at": datetime.fromtimestamp(now).isoformat(),
-        }
-    )
+    try:
+        payload = load_latest_scan()
+        return jsonify({**payload, "cached": True})
+    except Exception as exc:
+        app.logger.exception("Could not load latest database scan")
+        return jsonify({"error": str(exc)}), 503
 
 
 @app.get("/api/database-status")
@@ -558,6 +707,7 @@ def price_history(ticker: str):
                         "d3": result.d3,
                         "d5": result.d5,
                         "d20": result.d20,
+                        "d60": result.d60,
                         "reversal_date": result.reversal_date,
                         "source": run.source_mode,
                     }
@@ -570,6 +720,29 @@ def price_history(ticker: str):
 @app.get("/api/chart/<ticker>")
 def chart(ticker: str):
     ticker = ticker.upper()
+    if ensure_database():
+        with SessionLocal() as session:
+            records = session.scalars(
+                select(DailyPrice)
+                .join(Stock, DailyPrice.stock_id == Stock.id)
+                .where(Stock.ticker == ticker)
+                .order_by(DailyPrice.trading_date.desc())
+                .limit(70)
+            ).all()
+            if records:
+                records.reverse()
+                return jsonify(
+                    {
+                        "ticker": ticker,
+                        "dates": [item.trading_date.isoformat() for item in records],
+                        "prices": [round(item.close, 3) for item in records],
+                        "ma3": [
+                            None if item.ma3 is None else round(item.ma3, 3)
+                            for item in records
+                        ],
+                        "source": "database",
+                    }
+                )
     try:
         frame = yf.Ticker(ticker).history(period="3mo", auto_adjust=False)
         if frame.empty:
@@ -582,6 +755,7 @@ def chart(ticker: str):
                 "dates": [pd.Timestamp(value).strftime("%Y-%m-%d") for value in close.index],
                 "prices": [round(float(value), 3) for value in close],
                 "ma3": [None if pd.isna(value) else round(float(value), 3) for value in ma3],
+                "source": "yahoo_fallback",
             }
         )
     except Exception as exc:

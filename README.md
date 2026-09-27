@@ -13,13 +13,31 @@ The app tracks 611 selections—473 mainland and 138 Hong Kong listings. This in
 - interactive 3-month Close/MA3 charts
 - exchange-aware TradingView company-profile links that open in the one-month view
 
-Each fresh scan is persisted to PostgreSQL on Railway. The database contains three tables:
+The web app is PostgreSQL-first: page loads read the latest completed snapshot instead of waiting for Yahoo Finance. A separate Railway Cron service refreshes the universe and prices at **16:15 Asia/Taipei/Hong Kong (08:15 UTC), Monday–Friday**, after the mainland and Hong Kong cash markets close. The database contains four tables:
 
 - `stocks` — the active stock universe and source metadata
 - `scan_runs` — one record for every completed Yahoo Finance scan
 - `scan_results` — the per-stock price and reversal metrics for each run
+- `daily_prices` — Close and MA3 chart points cached by ticker and trading date
 
 `GET /api/database-status` reports row counts and the latest stored run. `GET /api/history/<ticker>` returns persisted scan history for a symbol.
+
+## Railway services
+
+Both services use this repository and the same PostgreSQL `DATABASE_URL`:
+
+| Service | Start command | Schedule |
+| --- | --- | --- |
+| Web | `gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 120` | always on |
+| After-close cron | `python cron_scan.py` | `15 8 * * 1-5` (UTC) |
+
+The cron process synchronizes the public Google Sheet (falling back to the bundled snapshot), downloads six months of daily prices, writes one completed scan plus chart history, and exits. Railway skips a cron execution if the prior one is still running; the entrypoint also uses a PostgreSQL advisory lock.
+
+To run the same refresh manually:
+
+```bash
+.venv/bin/python cron_scan.py
+```
 
 ## Run locally
 
@@ -39,11 +57,13 @@ Open <http://127.0.0.1:5000>.
 | `GITHUB_REPO_URL` | Header GitHub link | this repository |
 | `GOOGLE_SHEET_ID` | Source stock-list Sheet | current CNYES capture |
 | `SOURCE_SHEET_NAME` | Source tab name | `股票清單` |
-| `CACHE_TTL` | Price-scan cache in seconds | `900` |
 | `BATCH_SIZE` | YFinance symbols per request | `45` |
 | `DATABASE_URL` | PostgreSQL connection URL; Railway injects this | local SQLite file |
+| `DB_POOL_SIZE` | Web PostgreSQL connection pool size | `5` |
+| `DB_MAX_OVERFLOW` | Temporary connections above the pool | `5` |
+| `DB_POOL_TIMEOUT` | Seconds to wait for a connection | `10` |
 
-If the Google Sheet is publicly readable, the app refreshes the universe from it. Otherwise it uses the committed 306-row snapshot in `data/stock_universe.json`.
+The cron refreshes the universe from the public Google Sheet. If it is unavailable, the scan uses the committed 611-row snapshot in `data/stock_universe.json`.
 
 ## Data note
 

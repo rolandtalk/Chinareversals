@@ -94,7 +94,7 @@ def test_stock_api_includes_research_links():
 
 def test_database_seed_and_status():
     rows, source = app_module.load_stocks()
-    assert source in {"google_sheet", "bundled_snapshot"}
+    assert source in {"database", "google_sheet", "bundled_snapshot"}
     assert len(rows) == 611
     summary = app_module.database_summary()
     assert summary["connected"] is True
@@ -104,3 +104,18 @@ def test_database_seed_and_status():
     response = client.get("/api/database-status")
     assert response.status_code == 200
     assert response.get_json()["stocks"] == 611
+
+
+def test_data_api_reads_completed_database_snapshot(monkeypatch):
+    monkeypatch.setattr(
+        app_module,
+        "scan_stocks",
+        lambda _stocks: (_ for _ in ()).throw(AssertionError("live scan called")),
+    )
+    client = app_module.app.test_client()
+    response = client.get("/api/data?refresh=1")
+    assert response.status_code == 200
+    payload = response.get_json()
+    assert payload["cached"] is True
+    assert len(payload["rows"]) == 611
+    assert all("d60" in row for row in payload["rows"])

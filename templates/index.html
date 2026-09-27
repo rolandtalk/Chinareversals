@@ -219,7 +219,7 @@
         <label class="search"><input id="searchInput" type="search" placeholder="Search code, ticker, or Chinese name" autocomplete="off"></label>
         <div class="actions">
           <button id="exportButton" class="button">Export CSV</button>
-          <button id="refreshButton" class="button primary">Refresh prices</button>
+          <button id="refreshButton" class="button primary">Reload latest data</button>
         </div>
       </div>
       <div class="status" id="statusLine">Loading the stock universe…</div>
@@ -237,8 +237,8 @@
     </section>
 
     <footer>
-      <span>Source snapshot: {{ as_of or 'current sheet' }} · {{ stock_count }} CNYES selections · <span id="databaseState">Database checking…</span></span>
-      <span>Research tool only. Yahoo Finance data may be delayed or unavailable.</span>
+      <span>Source snapshot: {{ as_of or 'current sheet' }} · {{ stock_count }} selections · <span id="databaseState">Database checking…</span></span>
+      <span>Updated automatically after market close. Research tool only.</span>
     </footer>
   </main>
 
@@ -325,19 +325,19 @@
         const payload = await response.json();
         state.rows = payload.stocks.map(row => ({...row, price:null, dg:null, gg:null, rsi:null, d1:null, d3:null, d5:null, d20:null, d60:null}));
         updateCategoryCounts(); render();
-        statusEl.innerHTML = `<strong>${payload.count} stocks loaded.</strong> Calculating MA3 reversal data from Yahoo Finance…`;
-        await loadPrices(false);
+        statusEl.innerHTML = `<strong>${payload.count} stocks loaded.</strong> Reading the latest completed close from PostgreSQL…`;
+        await loadPrices();
       } catch (error) {
         state.loading = false;
         statusEl.textContent = `Could not load stock universe: ${error.message}`;
       }
     }
 
-    async function loadPrices(force) {
+    async function loadPrices() {
       state.loading = true; refreshButton.disabled = true; render();
-        statusEl.innerHTML = '<strong>Scanning prices…</strong> This can take 15–45 seconds for the full list.';
+        statusEl.innerHTML = '<strong>Loading latest close…</strong> Daily scanning runs automatically after market close.';
       try {
-        const response = await fetch(`/api/data${force ? '?refresh=1' : ''}`);
+        const response = await fetch('/api/data');
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const payload = await response.json();
         state.rows = payload.rows;
@@ -345,11 +345,11 @@
         updateCategoryCounts(); render();
         const available = state.rows.filter(row => row.price != null).length;
         const time = payload.generated_at ? new Date(payload.generated_at).toLocaleString() : 'now';
-        statusEl.innerHTML = `<strong>${available}/${state.rows.length} quotes available</strong> · ${payload.cached ? 'cached' : 'fresh'} scan${payload.run_id ? ` #${payload.run_id}` : ''} · ${esc(time)}`;
+        statusEl.innerHTML = `<strong>${available}/${state.rows.length} quotes available</strong> · latest completed scan${payload.run_id ? ` #${payload.run_id}` : ''} · ${esc(time)}`;
         loadDatabaseStatus();
       } catch (error) {
         state.loading = false; render();
-        statusEl.textContent = `Price scan failed: ${error.message}. The source list remains available.`;
+        statusEl.textContent = `Latest close unavailable: ${error.message}. The source list remains available.`;
       } finally { refreshButton.disabled = false; }
     }
 
@@ -399,7 +399,7 @@
     document.querySelectorAll('th[data-sort]').forEach(th => th.addEventListener('click', () => {
       const key = th.dataset.sort; state.sortDirection = state.sortKey === key ? -state.sortDirection : 1; state.sortKey = key; render();
     }));
-    refreshButton.addEventListener('click', () => loadPrices(true));
+    refreshButton.addEventListener('click', loadPrices);
     document.querySelector('#closeDrawer').addEventListener('click', closeDrawer);
     document.querySelector('#drawerBackdrop').addEventListener('click', event => { if (event.target.id === 'drawerBackdrop') closeDrawer(); });
     document.addEventListener('keydown', event => { if (event.key === 'Escape') closeDrawer(); });
